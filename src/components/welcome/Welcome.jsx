@@ -1,9 +1,10 @@
 import React from 'react';
+import FlashMessage from './flash_message/FlashMessage';
 
 const Welcome = () => {
   return (
     <div>
-      <h4>Hello there!</h4>
+      <FlashMessage />
     </div>
   )
 }
