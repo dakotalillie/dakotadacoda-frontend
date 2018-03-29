@@ -4,6 +4,7 @@ import Header from './header/Header';
 import Jumbo from './jumbo/Jumbo';
 import AboutPreview from './about_preview/AboutPreview';
 import PortfolioPreview from './portfolio_preview/PortfolioPreview';
+import ResumePreview from './resume_preview/ResumePreview';
 
 const Welcome = () => {
   return (
@@ -13,6 +14,7 @@ const Welcome = () => {
       <Jumbo />
       <AboutPreview />
       <PortfolioPreview />
+      <ResumePreview />
     </div>
   );
 };
