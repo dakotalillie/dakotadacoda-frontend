@@ -5,16 +5,18 @@ import Jumbo from './jumbo/Jumbo';
 import AboutPreview from './about_preview/AboutPreview';
 import PortfolioPreview from './portfolio_preview/PortfolioPreview';
 import ResumePreview from './resume_preview/ResumePreview';
+import BlogPreview from './blog_preview/BlogPreview';
 
 const Welcome = () => {
   return (
-    <div>
+    <div className="welcome_page">
       <FlashMessage />
       <Header />
       <Jumbo />
       <AboutPreview />
       <PortfolioPreview />
       <ResumePreview />
+      <BlogPreview />
     </div>
   );
 };
