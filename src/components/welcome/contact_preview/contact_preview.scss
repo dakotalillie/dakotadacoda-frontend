@@ -1,0 +1,14 @@
+.contact_preview {
+  text-align: center;
+  .contact_form {
+    text-align: left;
+    width: 100%;
+    #message {
+      height: 210px;
+      resize: none;
+    }
+  }
+  .submit_button {
+    float: right;
+  }
+}

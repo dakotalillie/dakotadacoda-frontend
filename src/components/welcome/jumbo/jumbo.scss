@@ -1,3 +1,13 @@
 .jumbo {
+  color: white;
   text-align: center;
+  .jumbotron {
+    background: url(../../../img/background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 128px;
+    padding-bottom: 128px;
+  }
 }

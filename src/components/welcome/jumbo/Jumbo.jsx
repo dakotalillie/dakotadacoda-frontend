@@ -1,11 +1,13 @@
 import React from 'react';
 import { Button, Container, Jumbotron } from 'reactstrap';
+import Header from '../header/Header';
 import './jumbo.css';
 
 const Jumbo = () => {
   return (
     <div className="jumbo">
-      <Jumbotron>
+      <Jumbotron fluid>
+        <Header />
         <Container>
           <h1 className="display-3">Let's Get To Work</h1>
           <p className="lead">Dakota Lillie &bull; Software Developer</p>
