@@ -1,15 +1,15 @@
 import React from 'react';
 import { Col } from 'reactstrap';
 import TechIcon from './tech_icon/TechIcon';
-import reactLogo from '../../../img/react.png';
-import reduxLogo from '../../../img/redux.png';
-import bootstrapLogo from '../../../img/bootstrap.png';
-import railsLogo from '../../../img/rails.png';
-import materializeLogo from '../../../img/materialize.png';
-import s3Logo from '../../../img/s3.png';
-import beetboxCover from '../../../img/beetbox.png';
-import flatchatCover from '../../../img/flatchat.png';
-import diplomacyCover from '../../../img/diplomacy.png';
+import reactLogo from '../../../img/framework_icons/react.png';
+import reduxLogo from '../../../img/other_icons/redux.png';
+import bootstrapLogo from '../../../img/other_icons/bootstrap.png';
+import railsLogo from '../../../img/framework_icons/rails.png';
+import materializeLogo from '../../../img/other_icons/materialize.png';
+import s3Logo from '../../../img/other_icons/s3.png';
+import beetboxCover from '../../../img/project_images/beetbox.png';
+import flatchatCover from '../../../img/project_images/flatchat.png';
+import diplomacyCover from '../../../img/project_images/diplomacy.png';
 
 export function mapTechnology(tech) {
   let imgSrc;

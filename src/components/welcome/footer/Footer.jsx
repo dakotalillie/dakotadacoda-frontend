@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
-import githubIcon from '../../../img/social/github.png';
-import mediumIcon from '../../../img/social/medium.png';
-import linkedinIcon from '../../../img/social/linkedin.png';
+import githubIcon from '../../../img/social_icons/github.png';
+import mediumIcon from '../../../img/social_icons/medium.png';
+import linkedinIcon from '../../../img/social_icons/linkedin.png';
 import links from '../../../utils/links.json';
 import './footer.css';
 

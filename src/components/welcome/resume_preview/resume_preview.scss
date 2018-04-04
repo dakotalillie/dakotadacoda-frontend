@@ -1,3 +1,27 @@
 .resume_preview {
   text-align: right;
+  .btn-group-vertical {
+    width: 100%;
+    .btn {
+      border: 0;
+      border-radius: 0;
+      border-right: 1px solid grey;
+      &:hover {
+        background-color: white;
+        color: inherit;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .languages_row {
+    color: silver;
+    padding-top: 10px;
+    text-align: center;
+    .language_icon {
+      padding-bottom: 10px;
+      width: 70%;
+    }
+  }
 }
