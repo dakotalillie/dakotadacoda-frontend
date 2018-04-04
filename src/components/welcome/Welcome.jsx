@@ -7,6 +7,7 @@ import PortfolioPreview from './portfolio_preview/PortfolioPreview';
 import ResumePreview from './resume_preview/ResumePreview';
 import BlogPreview from './blog_preview/BlogPreview';
 import ContactPreview from './contact_preview/ContactPreview';
+import Footer from './footer/Footer';
 
 class Welcome extends React.Component {
   state = {
@@ -41,6 +42,7 @@ class Welcome extends React.Component {
         <ResumePreview />
         <BlogPreview />
         <ContactPreview />
+        <Footer />
       </div>
     );
   }
