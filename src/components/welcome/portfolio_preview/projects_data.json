@@ -1,0 +1,23 @@
+{
+  "Beetbox": {
+    "key": 0,
+    "title": "BeetBox",
+    "subtitle": "Sample Library Manager",
+    "technologies": ["React", "Redux", "Bootstrap", "Ruby On Rails", "AWS S3"],
+    "link": "https://github.com/dakotalillie/beetbox-dom"
+  },
+  "FlatChat": {
+    "key": 1,
+    "title": "FlatChat",
+    "subtitle": "Realtime Messaging Service",
+    "technologies": ["React", "Redux", "Bootstrap", "Ruby On Rails"],
+    "link": "https://github.com/dakotalillie/flatchat_dom"
+  },
+  "Diplomacy": {
+    "key": 2,
+    "title": "Diplomacy",
+    "subtitle": "Online Board Game",
+    "technologies": ["React", "Redux", "Materialize", "Ruby On Rails"],
+    "link": "https://github.com/dakotalillie/diplomacy"
+  }
+}
