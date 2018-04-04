@@ -8,12 +8,21 @@ import {
   CardSubtitle,
   CardText,
   CardTitle,
-  Container
+  Col,
+  Container,
+  Row
 } from 'reactstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faArrowRight from '@fortawesome/fontawesome-free-solid/faArrowRight';
+import TechIcon from './tech_icon/TechIcon';
 import projectsData from './projects_data.json';
 import './portfolio_preview.css';
+import reactLogo from '../../../img/react.png';
+import reduxLogo from '../../../img/redux.png';
+import bootstrapLogo from '../../../img/bootstrap.png';
+import railsLogo from '../../../img/rails.png';
+import materializeLogo from '../../../img/materialize.png';
+import s3Logo from '../../../img/s3.png';
 
 const PortfolioPreview = () => {
   const keys = Object.keys(projectsData);
@@ -31,8 +40,8 @@ const PortfolioPreview = () => {
           <CardTitle>{project.title}</CardTitle>
           <CardSubtitle>{project.subtitle}</CardSubtitle>
           <CardText>
-            Built With:
-            <ul>{project.technologies.map(t => <li>{t}</li>)}</ul>
+            Built Using:
+            <Row>{project.technologies.map(mapTechnology)}</Row>
           </CardText>
           <Button color="link" href={project.link}>
             Github <FontAwesomeIcon icon={faArrowRight} />
@@ -56,3 +65,38 @@ const PortfolioPreview = () => {
 };
 
 export default PortfolioPreview;
+
+// Helpers
+
+function mapTechnology(tech) {
+  let imgSrc;
+
+  switch (tech) {
+    case 'React':
+      imgSrc = reactLogo;
+      break;
+    case 'Redux':
+      imgSrc = reduxLogo;
+      break;
+    case 'Bootstrap':
+      imgSrc = bootstrapLogo;
+      break;
+    case 'Ruby On Rails':
+      imgSrc = railsLogo;
+      break;
+    case 'Materialize':
+      imgSrc = materializeLogo;
+      break;
+    case 'AWS S3':
+      imgSrc = s3Logo;
+      break;
+    default:
+      imgSrc = '#';
+  }
+
+  return (
+    <Col xs="4" className="tech_row">
+      <TechIcon src={imgSrc} alt={tech} />
+    </Col>
+  );
+}
