@@ -12,20 +12,40 @@ import {
 import './contact_preview.css';
 
 class ContactPreview extends React.Component {
-  state = {
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      formValues: { name: '', email: '', _subject: '', message: '' }
+    };
+    this.form = null;
+
+    this.setFormRef = e => {
+      this.form = e;
+    };
+  }
 
   handleChange = e => {
     let name = e.target.name;
     let value = e.target.value;
     this.setState(prevState => {
       let newState = { ...prevState };
-      newState[name] = value;
+      newState.formValues[name] = value;
       return newState;
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+
+    fetch('https://formspree.io/dakota.lillie@icloud.com', {
+      method: 'POST',
+      body: JSON.stringify(this.state.formValues),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => {
+      if (res.status === 200) {
+      }
     });
   };
 
@@ -38,7 +58,12 @@ class ContactPreview extends React.Component {
               <h2>Get In Touch.</h2>
             </Col>
           </Row>
-          <Form className="contact_form">
+          <Form
+            className="contact_form"
+            action="https://formspree.io/dakota.lillie@icloud.com"
+            onSubmit={this.handleSubmit}
+            innerRef={this.setFormRef}
+          >
             <Row>
               <Col sm="6">
                 <FormGroup>
@@ -67,9 +92,9 @@ class ContactPreview extends React.Component {
                   <Label for="subject">Subject</Label>
                   <Input
                     type="text"
-                    name="subject"
+                    name="_subject"
                     id="subject"
-                    placeholder="Hello There!"
+                    placeholder="On Life's Inexorable Vicissitudes"
                     value={this.state.subject}
                     onChange={this.handleChange}
                   />
@@ -89,10 +114,16 @@ class ContactPreview extends React.Component {
                 </FormGroup>
               </Col>
             </Row>
+            <Button
+              outline
+              size="lg"
+              color="success"
+              className="submit_button"
+              type="submit"
+            >
+              Send
+            </Button>
           </Form>
-          <Button outline size="lg" color="success" className="submit_button">
-            Submit
-          </Button>
         </Container>
       </div>
     );

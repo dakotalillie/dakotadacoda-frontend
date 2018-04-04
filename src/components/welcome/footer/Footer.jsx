@@ -16,13 +16,18 @@ const Footer = () => {
           </Col>
           <Col sm="6" className="second-col">
             <a href={links.github}>
-              <img src={githubIcon} className="social-icon" />
+              <img src={githubIcon} className="social-icon" alt="Github" />
             </a>
             <a href={links.medium}>
-              <img src={mediumIcon} className="social-icon" />
+              <img src={mediumIcon} className="social-icon" alt="Medium" />
             </a>
             <a href={links.linkedin}>
-              <img src={linkedinIcon} className="social-icon" id="linkedin" />
+              <img
+                src={linkedinIcon}
+                className="social-icon"
+                id="linkedin"
+                alt="Linked In"
+              />
             </a>
           </Col>
         </Row>
