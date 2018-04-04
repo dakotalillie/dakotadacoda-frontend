@@ -1,17 +1,15 @@
 import React from 'react';
 import { UncontrolledAlert } from 'reactstrap';
+import PropTypes from 'prop-types';
 import './flash_message.css';
 
-const FlashMessage = () => {
+const FlashMessage = props => {
   return (
     <div className="flash_message">
       <UncontrolledAlert color="secondary">
         Check out my latest blog post &mdash;{' '}
-        <a
-          href="https://medium.com/@dakota.lillie/multitasking-in-java-part-1-multithreading-4e0c17b4f774"
-          className="alert-link"
-        >
-          Multitasking In Java, Part 1: Multithreading
+        <a href={props.link} className="alert-link">
+          {props.title}
         </a>
       </UncontrolledAlert>
     </div>
@@ -19,3 +17,8 @@ const FlashMessage = () => {
 };
 
 export default FlashMessage;
+
+FlashMessage.propTypes = {
+  title: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired
+};

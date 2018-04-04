@@ -31,6 +31,7 @@ const PortfolioPreview = () => {
             src={determineCoverSrc(project.title)}
             alt={`${project.title} Cover`}
           />
+          <div className="image_overlay" />
         </div>
         <CardBody>
           <CardTitle>{project.title}</CardTitle>
