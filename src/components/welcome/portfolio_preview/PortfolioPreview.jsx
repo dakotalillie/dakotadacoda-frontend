@@ -4,6 +4,7 @@ import {
   Card,
   CardBody,
   CardDeck,
+  CardFooter,
   CardImg,
   CardSubtitle,
   CardText,
@@ -39,14 +40,14 @@ const PortfolioPreview = () => {
         <CardBody>
           <CardTitle>{project.title}</CardTitle>
           <CardSubtitle>{project.subtitle}</CardSubtitle>
-          <CardText>
-            Built Using:
-            <Row>{project.technologies.map(mapTechnology)}</Row>
-          </CardText>
+          <CardText>Built Using:</CardText>
+          <Row>{project.technologies.map(mapTechnology)}</Row>
+        </CardBody>
+        <CardFooter>
           <Button color="link" href={project.link}>
             Github <FontAwesomeIcon icon={faArrowRight} />
           </Button>
-        </CardBody>
+        </CardFooter>
       </Card>
     );
   });
@@ -95,7 +96,7 @@ function mapTechnology(tech) {
   }
 
   return (
-    <Col xs="4" className="tech_row">
+    <Col key={tech} xs="4" className="tech_row">
       <TechIcon src={imgSrc} alt={tech} />
     </Col>
   );
