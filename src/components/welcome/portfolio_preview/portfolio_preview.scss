@@ -1,6 +1,10 @@
 .portfolio_preview {
   text-align: center;
-  .card {
-    text-align: left;
+  .card-deck {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    .card {
+      text-align: left;
+    }
   }
 }

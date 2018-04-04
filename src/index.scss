@@ -1,4 +1,4 @@
-$lightGrey: #e2e3e5;
+$lightGrey: #ebedf0;
 
 body {
   margin: 0;
@@ -12,4 +12,8 @@ body {
   &.grey-bg {
     background-color: $lightGrey;
   }
+}
+
+.section_button {
+  margin-top: 20px;
 }

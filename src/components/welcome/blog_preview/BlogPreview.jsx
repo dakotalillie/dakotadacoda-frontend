@@ -20,7 +20,9 @@ const BlogPreview = () => {
           <Col>
             <h2>Technical Blog</h2>
             <h5>I use it to document everything I'm learning. Check it out!</h5>
-            <Button size="lg">View Blog</Button>
+            <Button outline color="info" size="lg" className="section_button">
+              View Blog
+            </Button>
           </Col>
           <Col>
             <Card>

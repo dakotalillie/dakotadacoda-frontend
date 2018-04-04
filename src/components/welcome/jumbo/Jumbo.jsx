@@ -12,7 +12,9 @@ const Jumbo = () => {
           <h1 className="display-3">Let's Get To Work</h1>
           <p className="lead">Dakota Lillie &bull; Software Developer</p>
           <p className="lead">
-            <Button color="primary">Learn More</Button>
+            <Button color="primary" size="lg" className="section_button">
+              Learn More
+            </Button>
           </p>
         </Container>
       </Jumbotron>

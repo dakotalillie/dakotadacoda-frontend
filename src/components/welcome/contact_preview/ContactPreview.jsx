@@ -90,7 +90,7 @@ class ContactPreview extends React.Component {
               </Col>
             </Row>
           </Form>
-          <Button size="lg" className="submit_button">
+          <Button outline size="lg" color="success" className="submit_button">
             Submit
           </Button>
         </Container>

@@ -72,7 +72,9 @@ const PortfolioPreview = () => {
             </CardBody>
           </Card>
         </CardDeck>
-        <Button>View Portfolio</Button>
+        <Button outline color="info" size="lg" className="section_button">
+          View Portfolio
+        </Button>
       </Container>
     </div>
   );
