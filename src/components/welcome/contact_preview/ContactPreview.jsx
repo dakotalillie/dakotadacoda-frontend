@@ -31,7 +31,7 @@ class ContactPreview extends React.Component {
 
   render() {
     return (
-      <div className="contact_preview">
+      <div className="contact_preview section">
         <Container>
           <Row>
             <Col>

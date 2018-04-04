@@ -4,7 +4,7 @@ import './resume_preview.css';
 
 const ResumePreview = () => {
   return (
-    <div className="resume_preview">
+    <div className="resume_preview section">
       <Container>
         <h2>FullStack Web Development</h2>
         <h4>With more soon to come!</h4>

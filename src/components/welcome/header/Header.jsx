@@ -9,6 +9,7 @@ import {
   NavItem,
   NavLink
 } from 'reactstrap';
+import Logo from './logo/Logo';
 import './header.css';
 
 class Header extends React.Component {
@@ -25,7 +26,9 @@ class Header extends React.Component {
       <div className="header">
         <Container>
           <Navbar color="faded" dark expand="md">
-            <NavbarBrand href="#">Logo</NavbarBrand>
+            <NavbarBrand href="/">
+              <Logo />
+            </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>

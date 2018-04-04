@@ -1,6 +1,9 @@
+@import '../../../index.scss';
+
 .flash_message {
   text-align: center;
   .alert {
     margin-bottom: 0;
+    background-color: $lightGrey;
   }
 }

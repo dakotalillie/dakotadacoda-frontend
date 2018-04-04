@@ -14,7 +14,7 @@ import {
 
 const BlogPreview = () => {
   return (
-    <div className="blog_preview">
+    <div className="blog_preview section grey-bg">
       <Container>
         <Row>
           <Col>

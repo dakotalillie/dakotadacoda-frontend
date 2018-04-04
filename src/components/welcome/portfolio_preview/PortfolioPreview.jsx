@@ -14,7 +14,7 @@ import './portfolio_preview.css';
 
 const PortfolioPreview = () => {
   return (
-    <div className="portfolio_preview">
+    <div className="portfolio_preview section grey-bg">
       <Container>
         <h2>Recent Projects</h2>
         <CardDeck>
