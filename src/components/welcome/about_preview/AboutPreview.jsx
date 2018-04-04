@@ -17,11 +17,7 @@ const AboutPreview = () => {
             </Button>
           </Col>
           <Col>
-            <img
-              src={profileImage}
-              className="profile_image"
-              alt="profile image"
-            />
+            <img src={profileImage} className="profile_image" alt="profile" />
           </Col>
         </Row>
       </Container>

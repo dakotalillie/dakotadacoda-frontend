@@ -17,3 +17,9 @@ body {
 .section_button {
   margin-top: 20px;
 }
+
+.card .btn.btn-link {
+  color: inherit;
+  font-weight: 700;
+  padding-left: 0;
+}

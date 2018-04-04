@@ -26,14 +26,14 @@ const PortfolioPreview = () => {
               alt="Card image cap"
             />
             <CardBody>
-              <CardTitle>Card title</CardTitle>
-              <CardSubtitle>Card subtitle</CardSubtitle>
+              <CardTitle>BeetBox</CardTitle>
+              <CardSubtitle>Sample Library Manager</CardSubtitle>
               <CardText>
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
                 longer.
               </CardText>
-              <Button>Button</Button>
+              <Button color="link">Github</Button>
             </CardBody>
           </Card>
           <Card>
@@ -44,13 +44,13 @@ const PortfolioPreview = () => {
               alt="Card image cap"
             />
             <CardBody>
-              <CardTitle>Card title</CardTitle>
-              <CardSubtitle>Card subtitle</CardSubtitle>
+              <CardTitle>FlatChat</CardTitle>
+              <CardSubtitle>Messaging Service</CardSubtitle>
               <CardText>
                 This card has supporting text below as a natural lead-in to
                 additional content.
               </CardText>
-              <Button>Button</Button>
+              <Button color="link">Github</Button>
             </CardBody>
           </Card>
           <Card>
@@ -61,14 +61,14 @@ const PortfolioPreview = () => {
               alt="Card image cap"
             />
             <CardBody>
-              <CardTitle>Card title</CardTitle>
-              <CardSubtitle>Card subtitle</CardSubtitle>
+              <CardTitle>Diplomacy</CardTitle>
+              <CardSubtitle>Online Board Game</CardSubtitle>
               <CardText>
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This card has even longer content
                 than the first to show that equal height action.
               </CardText>
-              <Button>Button</Button>
+              <Button color="link">Github</Button>
             </CardBody>
           </Card>
         </CardDeck>
