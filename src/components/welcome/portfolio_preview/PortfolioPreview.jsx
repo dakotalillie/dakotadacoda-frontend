@@ -9,21 +9,14 @@ import {
   CardSubtitle,
   CardText,
   CardTitle,
-  Col,
   Container,
   Row
 } from 'reactstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faArrowRight from '@fortawesome/fontawesome-free-solid/faArrowRight';
-import TechIcon from './tech_icon/TechIcon';
 import projectsData from './projects_data.json';
+import { mapTechnology, determineCoverSrc } from './portfolio_preview_utils';
 import './portfolio_preview.css';
-import reactLogo from '../../../img/react.png';
-import reduxLogo from '../../../img/redux.png';
-import bootstrapLogo from '../../../img/bootstrap.png';
-import railsLogo from '../../../img/rails.png';
-import materializeLogo from '../../../img/materialize.png';
-import s3Logo from '../../../img/s3.png';
 
 const PortfolioPreview = () => {
   const keys = Object.keys(projectsData);
@@ -31,12 +24,14 @@ const PortfolioPreview = () => {
     const project = projectsData[title];
     return (
       <Card key={project.key}>
-        <CardImg
-          top
-          width="100%"
-          src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180"
-          alt="Card image cap"
-        />
+        <div className="image_container">
+          <CardImg
+            top
+            width="100%"
+            src={determineCoverSrc(project.title)}
+            alt={`${project.title} Cover`}
+          />
+        </div>
         <CardBody>
           <CardTitle>{project.title}</CardTitle>
           <CardSubtitle>{project.subtitle}</CardSubtitle>
@@ -66,38 +61,3 @@ const PortfolioPreview = () => {
 };
 
 export default PortfolioPreview;
-
-// Helpers
-
-function mapTechnology(tech) {
-  let imgSrc;
-
-  switch (tech) {
-    case 'React':
-      imgSrc = reactLogo;
-      break;
-    case 'Redux':
-      imgSrc = reduxLogo;
-      break;
-    case 'Bootstrap':
-      imgSrc = bootstrapLogo;
-      break;
-    case 'Ruby On Rails':
-      imgSrc = railsLogo;
-      break;
-    case 'Materialize':
-      imgSrc = materializeLogo;
-      break;
-    case 'AWS S3':
-      imgSrc = s3Logo;
-      break;
-    default:
-      imgSrc = '#';
-  }
-
-  return (
-    <Col key={tech} xs="4" className="tech_row">
-      <TechIcon src={imgSrc} alt={tech} />
-    </Col>
-  );
-}

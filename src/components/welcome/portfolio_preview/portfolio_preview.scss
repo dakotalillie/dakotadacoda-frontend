@@ -5,16 +5,24 @@
     margin-bottom: 8px;
     .card {
       text-align: left;
-      .card-text {
-        margin-top: 15px;
-        margin-bottom: 0;
+      .image_container {
+        background: black;
+        height: 180px;
+        overflow: hidden;
+        width: 100%;
       }
-      .row {
-        margin-top: 5px;
-      }
-      .tech_row {
-        margin-top: 15px;
-        text-align: center;
+      .card-body {
+        .card-text {
+          margin-top: 15px;
+          margin-bottom: 0;
+        }
+        .row {
+          margin-top: 5px;
+        }
+        .tech_row {
+          margin-top: 15px;
+          text-align: center;
+        }
       }
     }
   }
