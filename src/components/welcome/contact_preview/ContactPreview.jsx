@@ -9,13 +9,18 @@ import {
   Label,
   Row
 } from 'reactstrap';
+import Loader from 'react-loader-spinner';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import checkMark from '@fortawesome/fontawesome-free-solid/faCheck';
 import './contact_preview.css';
 
 class ContactPreview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formValues: { name: '', email: '', _subject: '', message: '' }
+      formValues: { name: '', email: '', _subject: '', message: '' },
+      status: null,
+      buttonHover: true
     };
     this.form = null;
 
@@ -36,16 +41,18 @@ class ContactPreview extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-
-    fetch('https://formspree.io/dakota.lillie@icloud.com', {
-      method: 'POST',
-      body: JSON.stringify(this.state.formValues),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(res => {
-      if (res.status === 200) {
-      }
+    this.setState({ status: 'loading' }, () => {
+      fetch('https://formspree.io/dakota.lillie@icloud.com', {
+        method: 'POST',
+        body: JSON.stringify(this.state.formValues),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(res => {
+        if (res.status === 200) {
+          this.setState({ status: 'success' });
+        }
+      });
     });
   };
 
@@ -118,10 +125,16 @@ class ContactPreview extends React.Component {
               outline
               size="lg"
               color="success"
-              className="submit_button"
+              className={determineButtonClass(this.state.status)}
               type="submit"
+              onMouseEnter={() => this.setState({ buttonHover: true })}
+              onMouseLeave={() =>
+                this.setState({
+                  buttonHover: false
+                })
+              }
             >
-              Send
+              {determineButtonIcon(this.state.status, this.state.buttonHover)}
             </Button>
           </Form>
         </Container>
@@ -131,3 +144,29 @@ class ContactPreview extends React.Component {
 }
 
 export default ContactPreview;
+
+// helpers
+
+function determineButtonIcon(status, hover) {
+  if (status === null) {
+    return 'Send';
+  } else if (status === 'loading') {
+    return <Loader type="Oval" color="#249D3D" height={22} width={45} />;
+  } else if (status === 'success') {
+    return (
+      <span>
+        <FontAwesomeIcon icon={checkMark} /> Sent!
+      </span>
+    );
+  }
+}
+
+function determineButtonClass(status) {
+  let className = 'submit_button';
+  if (status === 'loading') {
+    className += ' disabled loading';
+  } else if (status === 'success') {
+    className += ' disabled';
+  }
+  return className;
+}
