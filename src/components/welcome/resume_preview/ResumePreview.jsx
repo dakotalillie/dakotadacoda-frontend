@@ -1,10 +1,6 @@
 import React from 'react';
 import { Button, ButtonGroup, Col, Container, Row } from 'reactstrap';
-import resumeData from './resume_data.json';
-import javascriptLogo from '../../../img/language_icons/javascript.png';
-import pythonLogo from '../../../img/language_icons/python.png';
-import javaLogo from '../../../img/language_icons/java.png';
-import rubyLogo from '../../../img/language_icons/ruby.png';
+import { tabDisplay } from './resume_preview_utils';
 import './resume_preview.css';
 
 class ResumePreview extends React.Component {
@@ -52,7 +48,9 @@ class ResumePreview extends React.Component {
                 </Button>
               </ButtonGroup>
             </Col>
-            <Col sm="5">{tabDisplay(this.state.active)}</Col>
+            <Col sm="5">
+              <Row>{tabDisplay(this.state.active)}</Row>
+            </Col>
             <Col sm="5">
               <h2>FullStack Web Development</h2>
               <h4>With more soon to come!</h4>
@@ -68,38 +66,3 @@ class ResumePreview extends React.Component {
 }
 
 export default ResumePreview;
-
-function tabDisplay(activeTab) {
-  switch (activeTab) {
-    case 'languages':
-      return <Row className="languages_row">{languagesTab()}</Row>;
-  }
-}
-
-function languagesTab() {
-  return resumeData.languages.map(language => {
-    let href;
-    switch (language) {
-      case 'JavaScript':
-        href = javascriptLogo;
-        break;
-      case 'Python':
-        href = pythonLogo;
-        break;
-      case 'Java':
-        href = javaLogo;
-        break;
-      case 'Ruby':
-        href = rubyLogo;
-        break;
-      default:
-        href = '#';
-    }
-    return (
-      <Col xs="3" key={language}>
-        <img src={href} alt={language} className="language_icon" />
-        {language}
-      </Col>
-    );
-  });
-}
