@@ -54,9 +54,9 @@ class ResumePreview extends React.Component {
             <Col sm="5">
               <h2>FullStack Web Development</h2>
               <h4>With more soon to come!</h4>
-              <Button outline color="info" size="lg" className="section_button">
-                View Resume
-              </Button>
+              {/* <Button outline color="info" className="section_button">
+                More On LinkedIn
+              </Button> */}
             </Col>
           </Row>
         </Container>

@@ -79,7 +79,7 @@ class ContactPreview extends React.Component {
                     type="text"
                     name="name"
                     id="name"
-                    placeholder="Jane Doe"
+                    placeholder="Michael Fassbender"
                     value={this.state.name}
                     onChange={this.handleChange}
                   />
@@ -90,7 +90,7 @@ class ContactPreview extends React.Component {
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="janedoe@email.com"
+                    placeholder="thefass@bender.com"
                     value={this.state.email}
                     onChange={this.handleChange}
                   />
@@ -114,7 +114,7 @@ class ContactPreview extends React.Component {
                     type="textarea"
                     name="message"
                     id="message"
-                    placeholder="Say hello!"
+                    placeholder="Sup."
                     value={this.state.message}
                     onChange={this.handleChange}
                   />

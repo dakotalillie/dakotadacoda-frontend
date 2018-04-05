@@ -53,9 +53,9 @@ const PortfolioPreview = () => {
       <Container>
         <h2>Recent Projects</h2>
         <CardDeck>{cards}</CardDeck>
-        <Button outline color="info" size="lg" className="section_button">
+        {/* <Button outline color="info" size="lg" className="section_button">
           View Portfolio
-        </Button>
+        </Button> */}
       </Container>
     </div>
   );
