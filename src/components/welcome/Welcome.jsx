@@ -1,5 +1,6 @@
 import React from 'react';
 import Feed from 'rss-to-json';
+import scrollToComponent from 'react-scroll-to-component';
 import FlashMessage from './flash_message/FlashMessage';
 import Jumbo from './jumbo/Jumbo';
 import AboutPreview from './about_preview/AboutPreview';
@@ -27,6 +28,10 @@ class Welcome extends React.Component {
     );
   }
 
+  handleScroll = target => {
+    scrollToComponent(this[target], { align: 'top' });
+  };
+
   render() {
     return (
       <div className="welcome_page">
@@ -36,12 +41,37 @@ class Welcome extends React.Component {
             link={this.state.latestBlogLink}
           />
         ) : null}
-        <Jumbo />
-        <AboutPreview />
-        <PortfolioPreview />
-        <ResumePreview />
-        <BlogPreview />
-        <ContactPreview />
+        <Jumbo
+          handleScroll={this.handleScroll}
+          ref={section => {
+            this.jumbo = section;
+          }}
+        />
+        <AboutPreview
+          ref={section => {
+            this.about = section;
+          }}
+        />
+        <PortfolioPreview
+          ref={section => {
+            this.portfolio = section;
+          }}
+        />
+        <ResumePreview
+          ref={section => {
+            this.resume = section;
+          }}
+        />
+        <BlogPreview
+          ref={section => {
+            this.blog = section;
+          }}
+        />
+        <ContactPreview
+          ref={section => {
+            this.contact = section;
+          }}
+        />
         <Footer />
       </div>
     );

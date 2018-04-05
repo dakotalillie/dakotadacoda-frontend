@@ -2,7 +2,11 @@
   background-color: rgba(0, 0, 0, 0.4);
   margin-top: -192px;
   margin-bottom: 192px;
+  .navbar-brand {
+    cursor: pointer;
+  }
   .navbar-dark .navbar-nav .nav-link {
     color: white;
+    cursor: pointer;
   }
 }
