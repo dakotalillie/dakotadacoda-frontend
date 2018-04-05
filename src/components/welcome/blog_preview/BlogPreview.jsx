@@ -23,7 +23,7 @@ class BlogPreview extends React.Component {
       <div className="blog_preview section grey-bg">
         <Container>
           <Row>
-            <Col>
+            <Col sm="6">
               <h2>Technical Blog</h2>
               <h5>
                 I use it to document everything I'm learning. Check it out!
@@ -32,7 +32,7 @@ class BlogPreview extends React.Component {
                 View Blog
               </Button>
             </Col>
-            <Col>
+            <Col sm="6" className="second">
               <Card>
                 <a href={blogData.url}>
                   <CardImg

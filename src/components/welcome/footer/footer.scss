@@ -19,3 +19,15 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .footer {
+    .row {
+      text-align: center;
+      .second-col {
+        margin-top: 10px;
+        text-align: inherit;
+      }
+    }
+  }
+}
