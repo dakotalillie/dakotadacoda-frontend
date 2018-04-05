@@ -11,6 +11,11 @@ import {
   Container,
   Row
 } from 'reactstrap';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faArrowRight from '@fortawesome/fontawesome-free-solid/faArrowRight';
+import blogData from '../../../utils/blog_sneakpeek_data.json';
+import blogCover from '../../../utils/blog_image.jpg';
+import './blog_preview.css';
 
 const BlogPreview = () => {
   return (
@@ -26,20 +31,24 @@ const BlogPreview = () => {
           </Col>
           <Col>
             <Card>
-              <CardImg
-                top
-                width="100%"
-                src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
-                alt="Card image cap"
-              />
+              <a href={blogData.url}>
+                <CardImg
+                  top
+                  width="100%"
+                  src={blogCover}
+                  alt="Card image cap"
+                />
+              </a>
               <CardBody>
-                <CardTitle>Card title</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </CardText>
-                <Button>Button</Button>
+                <CardTitle>
+                  <a href={blogData.url}>{blogData.title}</a>
+                </CardTitle>
+                <CardSubtitle>Published {blogData.published}</CardSubtitle>
+                <CardText>{blogData.firstParagraph}</CardText>
+                <p className="ellipsis">...</p>
+                <Button color="link" href={blogData.url}>
+                  Read More <FontAwesomeIcon icon={faArrowRight} />
+                </Button>
               </CardBody>
             </Card>
           </Col>

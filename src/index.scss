@@ -21,5 +21,8 @@ body {
 .card .btn.btn-link {
   color: inherit;
   font-weight: 700;
-  padding-left: 0;
+  padding: 0;
+  svg {
+    margin-left: 3px;
+  }
 }
