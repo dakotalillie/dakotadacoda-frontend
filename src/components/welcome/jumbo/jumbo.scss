@@ -8,7 +8,21 @@
     -o-background-size: cover;
     background-size: cover;
     margin-bottom: 0;
-    padding-top: 128px;
-    padding-bottom: 128px;
+    padding-top: 192px;
+    padding-bottom: 192px;
+    .social_icons {
+      img {
+        height: 30px;
+        margin-left: 15px;
+        margin-right: 15px;
+        &.linkedin {
+          height: 27px;
+          margin-bottom: 3px;
+        }
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
   }
 }
