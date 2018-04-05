@@ -1,5 +1,5 @@
 {
   "languages": ["JavaScript", "Python", "Java", "Ruby"],
   "frameworks": ["React", "Rails", "Django"],
-  "other": ["Redux", "SCSS", "PostgreSQL", "Bootstrap", "Sketch"]
+  "other": ["Redux", "SCSS", "PostgreSQL", "Bootstrap"]
 }
