@@ -45,12 +45,12 @@ class Header extends React.Component {
                 </NavItem>
                 <NavItem>
                   <NavLink onClick={() => this.props.handleScroll('portfolio')}>
-                    Portfolio
+                    Projects
                   </NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink onClick={() => this.props.handleScroll('resume')}>
-                    Resume
+                    Technologies
                   </NavLink>
                 </NavItem>
                 <NavItem>

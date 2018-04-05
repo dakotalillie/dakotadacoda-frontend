@@ -11,6 +11,9 @@
       .social-icon {
         margin-left: 15px;
         width: 25px;
+        &:hover {
+          opacity: 0.7;
+        }
         &#linkedin {
           margin-bottom: 3px;
           width: 23px;
