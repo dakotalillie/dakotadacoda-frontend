@@ -15,6 +15,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faArrowRight from '@fortawesome/fontawesome-free-solid/faArrowRight';
 import blogData from '../../../utils/blog_sneakpeek_data.json';
 import blogCover from '../../../utils/blog_image.jpg';
+import links from '../../../utils/links.json';
 import './blog_preview.css';
 
 class BlogPreview extends React.Component {
@@ -25,11 +26,14 @@ class BlogPreview extends React.Component {
           <Row>
             <Col sm="6">
               <h2>Technical Blog</h2>
-              <h5>
-                I use it to document everything I'm learning. Check it out!
-              </h5>
-              <Button outline size="lg" className="section_button">
-                Read More On Medium
+              <h5>The best way to learn is to teach</h5>
+              <Button
+                outline
+                size="lg"
+                className="section_button"
+                href={links.medium}
+              >
+                Read On Medium
               </Button>
             </Col>
             <Col sm="6" className="second">

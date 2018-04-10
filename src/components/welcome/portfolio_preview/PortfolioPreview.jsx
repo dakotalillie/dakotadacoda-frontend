@@ -9,13 +9,15 @@ import {
   CardSubtitle,
   CardText,
   CardTitle,
+  Col,
   Container,
   Row
 } from 'reactstrap';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import faArrowRight from '@fortawesome/fontawesome-free-solid/faArrowRight';
+// import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+// import faArrowRight from '@fortawesome/fontawesome-free-solid/faArrowRight';
 import projectsData from './projects_data.json';
 import { mapTechnology, determineCoverSrc } from './portfolio_preview_utils';
+import githubIcon from '../../../img/social_icons/github.png';
 import './portfolio_preview.css';
 
 class PortfolioPreview extends React.Component {
@@ -41,9 +43,20 @@ class PortfolioPreview extends React.Component {
             <Row>{project.technologies.map(mapTechnology)}</Row>
           </CardBody>
           <CardFooter>
-            <Button color="link" href={project.link}>
-              Github <FontAwesomeIcon icon={faArrowRight} />
-            </Button>
+            <Row>
+              <Col xs="4">
+                <Button color="link" href={project.links.frontend}>
+                  <img src={githubIcon} alt="Github" className="github_icon" />{' '}
+                  <span>front</span>
+                </Button>
+              </Col>
+              <Col xs="4">
+                <Button color="link" href={project.links.backend}>
+                  <img src={githubIcon} alt="Github" className="github_icon" />{' '}
+                  <span>back</span>
+                </Button>
+              </Col>
+            </Row>
           </CardFooter>
         </Card>
       );
