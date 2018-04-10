@@ -1,4 +1,4 @@
-@import '../../../index.scss';
+@import 'index.scss';
 
 .portfolio_preview {
   text-align: center;
@@ -6,6 +6,7 @@
     margin-top: 20px;
     margin-bottom: 8px;
     .card {
+      background-color: $lightGrey;
       color: black;
       text-align: left;
       .image_container {

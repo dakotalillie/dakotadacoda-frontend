@@ -1,13 +1,16 @@
+@import 'index.scss';
+
 .blog_preview {
   .second {
     margin-top: 0;
     .card {
+      background-color: $lightGrey;
       color: black;
       a {
         color: black;
       }
       .card-subtitle {
-        color: #999;
+        color: #747474;
         font-size: 0.95rem;
         font-weight: 300;
       }

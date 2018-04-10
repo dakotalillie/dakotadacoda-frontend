@@ -7,7 +7,18 @@
     margin-top: 15px;
     text-align: left;
     width: 100%;
+    .form-control {
+      background: $lightGrey;
+      border: none;
+      // border-bottom: 1px solid white;
+      // border-radius: 0;
+      color: black;
+      &:focus {
+        outline: none;
+      }
+    }
     #message {
+      // border: 1px solid white;
       height: 210px;
       resize: none;
     }
