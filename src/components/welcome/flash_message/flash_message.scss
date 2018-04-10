@@ -3,7 +3,19 @@
 .flash_message {
   text-align: center;
   .alert {
+    background-color: $primaryDarkGrey;
+    border: none;
+    border-radius: 0;
+    color: white;
     margin-bottom: 0;
-    background-color: $lightGrey;
+    .alert-link {
+      color: $primaryBlue;
+    }
+    .close {
+      &:hover,
+      &:focus {
+        color: white;
+      }
+    }
   }
 }
