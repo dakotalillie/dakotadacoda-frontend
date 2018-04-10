@@ -62,7 +62,7 @@ class ContactPreview extends React.Component {
         <Container>
           <Row>
             <Col>
-              <h2>Get In Touch.</h2>
+              <h2>Get In Touch</h2>
             </Col>
           </Row>
           <Form
@@ -79,7 +79,7 @@ class ContactPreview extends React.Component {
                     type="text"
                     name="name"
                     id="name"
-                    placeholder="Michael Fassbender"
+                    placeholder="Jane Doe"
                     value={this.state.name}
                     onChange={this.handleChange}
                   />
@@ -90,7 +90,7 @@ class ContactPreview extends React.Component {
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="thefass@bender.com"
+                    placeholder="your@email.com"
                     value={this.state.email}
                     onChange={this.handleChange}
                   />
@@ -101,7 +101,7 @@ class ContactPreview extends React.Component {
                     type="text"
                     name="_subject"
                     id="subject"
-                    placeholder="On Life's Inexorable Vicissitudes"
+                    placeholder="Your Subject"
                     value={this.state.subject}
                     onChange={this.handleChange}
                   />
@@ -114,28 +114,30 @@ class ContactPreview extends React.Component {
                     type="textarea"
                     name="message"
                     id="message"
-                    placeholder="Sup."
+                    placeholder="Hello World!"
                     value={this.state.message}
                     onChange={this.handleChange}
                   />
                 </FormGroup>
               </Col>
             </Row>
-            <Button
-              outline
-              size="lg"
-              color="success"
-              className={determineButtonClass(this.state.status)}
-              type="submit"
-              onMouseEnter={() => this.setState({ buttonHover: true })}
-              onMouseLeave={() =>
-                this.setState({
-                  buttonHover: false
-                })
-              }
-            >
-              {determineButtonIcon(this.state.status, this.state.buttonHover)}
-            </Button>
+            <div className="button_div">
+              <Button
+                outline
+                size="lg"
+                color="success"
+                className={determineButtonClass(this.state.status)}
+                type="submit"
+                onMouseEnter={() => this.setState({ buttonHover: true })}
+                onMouseLeave={() =>
+                  this.setState({
+                    buttonHover: false
+                  })
+                }
+              >
+                {determineButtonIcon(this.state.status, this.state.buttonHover)}
+              </Button>
+            </div>
           </Form>
         </Container>
       </div>

@@ -1,4 +1,7 @@
 $lightGrey: #ebedf0;
+$primaryDarkGrey: #2d2d2d;
+$secondaryDarkGrey: #424242;
+$primaryBlue: #28a9ff;
 
 body {
   margin: 0;
@@ -7,15 +10,23 @@ body {
 }
 
 .section {
+  background-color: $secondaryDarkGrey;
+  color: white;
   padding-top: 75px;
   padding-bottom: 75px;
   &.grey-bg {
-    background-color: $lightGrey;
+    background-color: $primaryDarkGrey;
   }
 }
 
 .section_button {
+  border-color: $primaryBlue !important;
+  color: $primaryBlue !important;
   margin-top: 20px;
+  &:hover {
+    background-color: $primaryBlue !important;
+    color: white !important;
+  }
 }
 
 .card .btn.btn-link {

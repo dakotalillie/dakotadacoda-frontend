@@ -5,6 +5,7 @@ import reactLogo from '../../../img/framework_icons/react.png';
 import reduxLogo from '../../../img/other_icons/redux.png';
 import bootstrapLogo from '../../../img/other_icons/bootstrap.png';
 import railsLogo from '../../../img/framework_icons/rails.png';
+import djangoLogo from '../../../img/framework_icons/django.png';
 import materializeLogo from '../../../img/other_icons/materialize.png';
 import s3Logo from '../../../img/other_icons/s3.png';
 import beetboxCover from '../../../img/project_images/beetbox.png';
@@ -31,6 +32,10 @@ export function mapTechnology(tech) {
     case 'Ruby On Rails':
       imgSrc = railsLogo;
       url = 'http://rubyonrails.org/';
+      break;
+    case 'Django':
+      imgSrc = djangoLogo;
+      url = 'https://www.djangoproject.com/';
       break;
     case 'Materialize':
       imgSrc = materializeLogo;

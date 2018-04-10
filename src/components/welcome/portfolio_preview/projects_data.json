@@ -17,7 +17,7 @@
     "key": 2,
     "title": "Diplomacy",
     "subtitle": "Online Board Game",
-    "technologies": ["React", "Redux", "Materialize", "Ruby On Rails"],
+    "technologies": ["React", "Redux", "Bootstrap", "Django"],
     "link": "https://github.com/dakotalillie/diplomacy"
   }
 }

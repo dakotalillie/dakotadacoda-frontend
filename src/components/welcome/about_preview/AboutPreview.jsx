@@ -9,7 +9,7 @@ class AboutPreview extends React.Component {
       <div className="about_preview section">
         <Container>
           <Row>
-            <Col sm="9">
+            <Col sm="9" className="copy_col">
               <h2>My name is Dakota</h2>
               <h2>I write code and make music</h2>
               <h5>(The two are not so dissimilar)</h5>

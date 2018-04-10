@@ -15,8 +15,8 @@ class Jumbo extends React.Component {
         <Jumbotron fluid>
           <Header handleScroll={this.props.handleScroll} />
           <Container>
-            <h1 className="display-3">Let's Get To Work!</h1>
-            <p className="lead">Dakota Lillie &bull; Software Developer</p>
+            <h1 className="display-3">Dakota Lillie</h1>
+            <p className="lead">Software Developer</p>
 
             <div className="social_icons">
               <a href={socialLinks.github}>

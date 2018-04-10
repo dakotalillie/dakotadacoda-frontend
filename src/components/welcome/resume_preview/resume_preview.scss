@@ -1,3 +1,5 @@
+@import 'index.scss';
+
 .resume_preview {
   text-align: right;
   .buttons_col {
@@ -6,17 +8,19 @@
       .btn {
         border: 0;
         border-radius: 0;
-        border-right: 1px solid #0070ff;
+        border-right: 1px solid $primaryBlue;
+        color: $primaryBlue;
         &:hover {
           background-color: inherit;
-          color: #0070ff;
+          color: $primaryBlue;
         }
         // &:focus {
         //   outline: none !important;
         // }
         &.active {
+          background-color: $primaryBlue;
           &:hover {
-            background-color: #0070ff;
+            background-color: $primaryBlue;
             color: white;
           }
         }

@@ -20,7 +20,6 @@ class ResumePreview extends React.Component {
             <Button
               outline
               block
-              color="primary"
               active={this.state.active === 'languages'}
               onClick={() => this.setActive('languages')}
             >
@@ -29,7 +28,6 @@ class ResumePreview extends React.Component {
             <Button
               outline
               block
-              color="primary"
               active={this.state.active === 'frameworks'}
               onClick={() => this.setActive('frameworks')}
             >
@@ -38,7 +36,6 @@ class ResumePreview extends React.Component {
             <Button
               outline
               block
-              color="primary"
               active={this.state.active === 'other'}
               onClick={() => this.setActive('other')}
             >
@@ -54,8 +51,8 @@ class ResumePreview extends React.Component {
 
     const section2 = (
       <Col sm="5" className="copy_col">
-        <h2>What I've Used</h2>
-        <h5>(Though I'm still constantly learning!)</h5>
+        <h2>Proficiencies</h2>
+        {/* <h5>(Though I'm still constantly learning!)</h5> */}
       </Col>
     );
 

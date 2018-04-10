@@ -28,7 +28,7 @@ class BlogPreview extends React.Component {
               <h5>
                 I use it to document everything I'm learning. Check it out!
               </h5>
-              <Button outline color="info" size="lg" className="section_button">
+              <Button outline size="lg" className="section_button">
                 Read More On Medium
               </Button>
             </Col>

@@ -1,5 +1,8 @@
+@import 'index.scss';
+
 .contact_preview {
   text-align: center;
+  padding-bottom: 50px;
   .contact_form {
     margin-top: 15px;
     text-align: left;
@@ -9,11 +12,19 @@
       resize: none;
     }
   }
-  .submit_button {
-    float: right;
-    &.loading {
-      padding-bottom: 5px;
-      padding-top: 11px;
+  .button_div {
+    text-align: right;
+    .submit_button {
+      border-color: $primaryBlue;
+      color: $primaryBlue;
+      &:hover {
+        background-color: $primaryBlue;
+        color: white;
+      }
+      &.loading {
+        padding-bottom: 5px;
+        padding-top: 11px;
+      }
     }
   }
 }

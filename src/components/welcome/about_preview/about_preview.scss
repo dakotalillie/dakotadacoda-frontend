@@ -1,6 +1,11 @@
+@import 'index.scss';
+
 .about_preview {
+  .copy_col {
+    margin-top: 38px;
+  }
   .profile_image {
-    border: 4px solid #007bff;
+    border: 4px solid $primaryBlue;
     border-radius: 30%;
     float: right;
     height: 200px;
