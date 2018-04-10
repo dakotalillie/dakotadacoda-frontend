@@ -52,7 +52,7 @@ class ResumePreview extends React.Component {
     const section2 = (
       <Col sm="4" className="copy_col">
         <h2>Proficiencies</h2>
-        <h5>The tools I've worked with</h5>
+        <h5>Tools that I've worked with</h5>
       </Col>
     );
 

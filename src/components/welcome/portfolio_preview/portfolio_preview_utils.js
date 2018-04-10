@@ -2,7 +2,7 @@ import React from 'react';
 import { Col } from 'reactstrap';
 import TechIcon from './tech_icon/TechIcon';
 import reactLogo from '../../../img/framework_icons/react.png';
-import reduxLogo from '../../../img/other_icons/redux.png';
+import reduxLogo from '../../../img/other_icons/redux_transparent.png';
 import bootstrapLogo from '../../../img/other_icons/bootstrap.png';
 import railsLogo from '../../../img/framework_icons/rails.png';
 import djangoLogo from '../../../img/framework_icons/django.png';
