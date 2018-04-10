@@ -1,9 +1,12 @@
+@import '../../../index.scss';
+
 .portfolio_preview {
   text-align: center;
   .card-deck {
     margin-top: 20px;
     margin-bottom: 8px;
     .card {
+      color: black;
       text-align: left;
       .image_container {
         height: 180px;

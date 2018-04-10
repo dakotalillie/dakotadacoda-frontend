@@ -66,7 +66,7 @@ export function determineCoverSrc(title) {
     case 'FlatChat':
       imgSrc = flatchatCover;
       break;
-    case 'Diplomacy':
+    case 'Stratagem':
       imgSrc = diplomacyCover;
       break;
     default:

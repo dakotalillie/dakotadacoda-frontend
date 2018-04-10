@@ -6,18 +6,18 @@
     "technologies": ["React", "Redux", "Bootstrap", "Ruby On Rails", "AWS S3"],
     "link": "https://github.com/dakotalillie/beetbox-dom"
   },
-  "FlatChat": {
+  "Stratagem": {
     "key": 1,
+    "title": "Stratagem",
+    "subtitle": "Online Board Game",
+    "technologies": ["React", "Redux", "Bootstrap", "Django"],
+    "link": "https://github.com/dakotalillie/diplomacy"
+  },
+  "FlatChat": {
+    "key": 2,
     "title": "FlatChat",
     "subtitle": "Realtime Messaging Service",
     "technologies": ["React", "Redux", "Bootstrap", "Ruby On Rails"],
     "link": "https://github.com/dakotalillie/flatchat_dom"
-  },
-  "Diplomacy": {
-    "key": 2,
-    "title": "Diplomacy",
-    "subtitle": "Online Board Game",
-    "technologies": ["React", "Redux", "Bootstrap", "Django"],
-    "link": "https://github.com/dakotalillie/diplomacy"
   }
 }
