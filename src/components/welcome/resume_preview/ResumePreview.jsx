@@ -43,16 +43,16 @@ class ResumePreview extends React.Component {
             </Button>
           </ButtonGroup>
         </Col>
-        <Col sm="5" className="icons_col">
+        <Col sm="6" className="icons_col">
           <Row>{tabDisplay(this.state.active)}</Row>
         </Col>
       </Fragment>
     );
 
     const section2 = (
-      <Col sm="5" className="copy_col">
+      <Col sm="4" className="copy_col">
         <h2>Proficiencies</h2>
-        {/* <h5>(Though I'm still constantly learning!)</h5> */}
+        <h5>The tools I've worked with</h5>
       </Col>
     );
 

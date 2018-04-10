@@ -50,7 +50,7 @@ class Header extends React.Component {
                 </NavItem>
                 <NavItem>
                   <NavLink onClick={() => this.props.handleScroll('resume')}>
-                    Technologies
+                    Proficiencies
                   </NavLink>
                 </NavItem>
                 <NavItem>
