@@ -1,8 +1,8 @@
 {
-  "title": "Multitasking In Java, Part 1: Multithreading",
-  "published": "March 28th, 2018",
+  "title": "Django & React: JWT Authentication",
+  "published": "Apr 12th, 2018",
   "firstParagraph":
-    "The more I learn about Java, the more I am impressed by the extent of its capabilities. It is deeply robust, a product both of its design and its maturity. It may not be the most dexterous language, and it is undeniably verbose compared to Ruby or Python. But I can see why it continues to be ranked as the most popular programming language in the world (and has been since the 90's).",
+    "Recently I’ve been building an app using a combination of React for the frontend and Django for the backend. I wasn’t previously all too familiar with Django, but this seemed like a good opportunity to teach myself, and having experience with Ruby on Rails has made the process a little easier. However, Django and Rails have their fair share of differences, and one of the things which I’ve had the most trouble implementing is user authentication. So I’m sharing what I’ve learned, in the hopes that you too might find it useful!",
   "url":
-    "https://medium.com/@dakota.lillie/multitasking-in-java-part-1-multithreading-4e0c17b4f774"
+    "https://medium.com/@dakota.lillie/django-react-jwt-authentication-5015ee00ef9a"
 }
