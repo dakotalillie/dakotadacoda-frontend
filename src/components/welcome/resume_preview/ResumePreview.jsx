@@ -20,6 +20,7 @@ class ResumePreview extends React.Component {
             <Button
               outline
               block
+              color="primary"
               active={this.state.active === 'languages'}
               onClick={() => this.setActive('languages')}
             >
@@ -28,6 +29,7 @@ class ResumePreview extends React.Component {
             <Button
               outline
               block
+              color="primary"
               active={this.state.active === 'frameworks'}
               onClick={() => this.setActive('frameworks')}
             >
@@ -36,6 +38,7 @@ class ResumePreview extends React.Component {
             <Button
               outline
               block
+              color="primary"
               active={this.state.active === 'other'}
               onClick={() => this.setActive('other')}
             >

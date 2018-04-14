@@ -18,7 +18,12 @@ class ContactPreview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formValues: { name: '', email: '', _subject: '', message: '' },
+      formValues: {
+        name: '',
+        email: '',
+        _subject: '',
+        message: ''
+      },
       status: null,
       buttonHover: true
     };
@@ -41,19 +46,23 @@ class ContactPreview extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.setState({ status: 'loading' }, () => {
-      fetch('https://formspree.io/dakota.lillie@icloud.com', {
-        method: 'POST',
-        body: JSON.stringify(this.state.formValues),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).then(res => {
-        if (res.status === 200) {
-          this.setState({ status: 'success' });
-        }
+    if (!this.state.status) {
+      this.setState({ status: 'loading' }, () => {
+        fetch('https://formspree.io/mkreevwx', {
+          method: 'POST',
+          body: JSON.stringify(this.state.formValues),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then(res => {
+          if (res.status === 200) {
+            this.setState({ status: 'success' });
+          } else {
+            console.log(res);
+          }
+        });
       });
-    });
+    }
   };
 
   render() {
@@ -67,7 +76,6 @@ class ContactPreview extends React.Component {
           </Row>
           <Form
             className="contact_form"
-            action="https://formspree.io/dakota.lillie@icloud.com"
             onSubmit={this.handleSubmit}
             innerRef={this.setFormRef}
           >
@@ -80,7 +88,7 @@ class ContactPreview extends React.Component {
                     name="name"
                     id="name"
                     placeholder="Jane Doe"
-                    value={this.state.name}
+                    value={this.state.formValues.name}
                     onChange={this.handleChange}
                   />
                 </FormGroup>
@@ -91,18 +99,18 @@ class ContactPreview extends React.Component {
                     name="email"
                     id="email"
                     placeholder="your@email.com"
-                    value={this.state.email}
+                    value={this.state.formValues.email}
                     onChange={this.handleChange}
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="subject">Subject</Label>
+                  <Label for="_subject">Subject</Label>
                   <Input
                     type="text"
                     name="_subject"
                     id="subject"
                     placeholder="Your Subject"
-                    value={this.state.subject}
+                    value={this.state.formValues._subject}
                     onChange={this.handleChange}
                   />
                 </FormGroup>
@@ -115,7 +123,7 @@ class ContactPreview extends React.Component {
                     name="message"
                     id="message"
                     placeholder="Hello World!"
-                    value={this.state.message}
+                    value={this.state.formValues.message}
                     onChange={this.handleChange}
                   />
                 </FormGroup>
@@ -125,7 +133,7 @@ class ContactPreview extends React.Component {
               <Button
                 outline
                 size="lg"
-                color="success"
+                color="primary"
                 className={determineButtonClass(this.state.status)}
                 type="submit"
                 onMouseEnter={() => this.setState({ buttonHover: true })}
@@ -153,7 +161,14 @@ function determineButtonIcon(status, hover) {
   if (status === null) {
     return 'Send';
   } else if (status === 'loading') {
-    return <Loader type="Oval" color="#249D3D" height={22} width={45} />;
+    return (
+      <Loader
+        type="Oval"
+        color={hover ? '#ffffff' : '#28a9ff'}
+        height={22}
+        width={45}
+      />
+    );
   } else if (status === 'success') {
     return (
       <span>
