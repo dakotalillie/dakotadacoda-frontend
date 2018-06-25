@@ -10,7 +10,7 @@ import {
   Row
 } from 'reactstrap';
 import Loader from 'react-loader-spinner';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import checkMark from '@fortawesome/fontawesome-free-solid/faCheck';
 import './contact_preview.css';
 

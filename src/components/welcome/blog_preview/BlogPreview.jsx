@@ -11,7 +11,7 @@ import {
   Container,
   Row
 } from 'reactstrap';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import faArrowRight from '@fortawesome/fontawesome-free-solid/faArrowRight';
 import blogData from '../../../utils/blog_sneakpeek_data.json';
 import blogCover from '../../../utils/blog_image.jpg';
