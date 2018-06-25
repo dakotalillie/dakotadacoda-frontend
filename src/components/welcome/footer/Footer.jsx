@@ -1,12 +1,13 @@
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
+
 import githubIcon from '../../../img/social_icons/white/github.png';
 import mediumIcon from '../../../img/social_icons/white/medium.png';
 import linkedinIcon from '../../../img/social_icons/white/linkedin.png';
 import links from '../../../utils/links.json';
 import './footer.css';
 
-const Footer = () => {
+export default function Footer() {
   return (
     <div className="footer">
       <Container>
@@ -34,6 +35,4 @@ const Footer = () => {
       </Container>
     </div>
   );
-};
-
-export default Footer;
+}

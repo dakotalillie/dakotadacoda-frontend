@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Button, ButtonGroup, Col, Container, Row } from 'reactstrap';
-import { tabDisplay } from './resume_preview_utils';
+
+import { tabDisplay } from './utils';
 import './resume_preview.css';
 
 class ResumePreview extends React.Component {
@@ -13,37 +14,23 @@ class ResumePreview extends React.Component {
   };
 
   render() {
+    const tabs = ['Languages', 'Frameworks', 'Other'];
     const section1 = (
       <Fragment>
         <Col sm="2" className="buttons_col">
           <ButtonGroup vertical>
-            <Button
-              outline
-              block
-              color="primary"
-              active={this.state.active === 'languages'}
-              onClick={() => this.setActive('languages')}
-            >
-              Languages
-            </Button>
-            <Button
-              outline
-              block
-              color="primary"
-              active={this.state.active === 'frameworks'}
-              onClick={() => this.setActive('frameworks')}
-            >
-              Frameworks
-            </Button>
-            <Button
-              outline
-              block
-              color="primary"
-              active={this.state.active === 'other'}
-              onClick={() => this.setActive('other')}
-            >
-              Other
-            </Button>
+            {tabs.map(name => (
+              <Button
+                key={name}
+                outline
+                block
+                color="primary"
+                active={this.state.active === name.toLowerCase()}
+                onClick={() => this.setActive(name.toLowerCase())}
+              >
+                {name}
+              </Button>
+            ))}
           </ButtonGroup>
         </Col>
         <Col sm="6" className="icons_col">
@@ -55,7 +42,6 @@ class ResumePreview extends React.Component {
     const section2 = (
       <Col sm="4" className="copy_col">
         <h2>Proficiencies &amp; Skills</h2>
-        {/* <h5>Tools that I've worked with</h5> */}
       </Col>
     );
 

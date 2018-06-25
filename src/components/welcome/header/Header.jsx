@@ -10,6 +10,7 @@ import {
   NavLink
 } from 'reactstrap';
 import PropTypes from 'prop-types';
+
 import Logo from './logo/Logo';
 import './header.css';
 
@@ -28,46 +29,24 @@ class Header extends React.Component {
   };
 
   render() {
+    const sections = ['Home', 'About', 'Projects', 'Skills', 'Blog', 'Contact'];
     return (
       <div className="header">
         <Container>
           <Navbar color="faded" dark expand="md">
-            <NavbarBrand onClick={() => this.props.handleScroll('jumbo')}>
+            <NavbarBrand onClick={() => this.props.handleScroll('home')}>
               <Logo />
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <NavLink onClick={() => this.props.handleScroll('jumbo')}>
-                    Home
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink onClick={() => this.props.handleScroll('about')}>
-                    About
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink onClick={() => this.props.handleScroll('portfolio')}>
-                    Projects
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink onClick={() => this.props.handleScroll('resume')}>
-                    Skills
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink onClick={() => this.props.handleScroll('blog')}>
-                    Blog
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink onClick={() => this.props.handleScroll('contact')}>
-                    Contact
-                  </NavLink>
-                </NavItem>
+                {sections.map(name => (
+                  <NavItem key={name}>
+                    <NavLink onClick={() => this.props.handleScroll(name.toLowerCase())}>
+                      {name}
+                    </NavLink>
+                  </NavItem>
+                ))}
               </Nav>
             </Collapse>
           </Navbar>

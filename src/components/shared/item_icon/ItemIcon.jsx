@@ -1,9 +1,10 @@
 import React from 'react';
 import { Col } from 'reactstrap';
 import PropTypes from 'prop-types';
+
 import './item_icon.css';
 
-const ItemIcon = props => {
+export default function ItemIcon(props) {
   return (
     <Col
       xs={props.xs}
@@ -19,7 +20,7 @@ const ItemIcon = props => {
       </a>
     </Col>
   );
-};
+}
 
 ItemIcon.propTypes = {
   name: PropTypes.string.isRequired,
@@ -32,5 +33,3 @@ ItemIcon.propTypes = {
   src: PropTypes.string.isRequired,
   subtitle: PropTypes.bool
 };
-
-export default ItemIcon;

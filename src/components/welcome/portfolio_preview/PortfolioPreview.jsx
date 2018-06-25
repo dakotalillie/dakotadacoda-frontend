@@ -13,10 +13,9 @@ import {
   Container,
   Row
 } from 'reactstrap';
-// import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-// import faArrowRight from '@fortawesome/fontawesome-free-solid/faArrowRight';
+
 import projectsData from './projects_data.json';
-import { mapTechnology, determineCoverSrc } from './portfolio_preview_utils';
+import { mapTechnology, determineCoverSrc } from './utils';
 import githubIcon from '../../../img/social_icons/github.png';
 import './portfolio_preview.css';
 
@@ -67,9 +66,6 @@ class PortfolioPreview extends React.Component {
         <Container>
           <h2>Recent Projects</h2>
           <CardDeck>{cards}</CardDeck>
-          {/* <Button outline color="info" size="lg" className="section_button">
-          View Portfolio
-        </Button> */}
         </Container>
       </div>
     );

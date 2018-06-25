@@ -13,12 +13,14 @@ import {
 } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import faArrowRight from '@fortawesome/fontawesome-free-solid/faArrowRight';
+
 import blogData from '../../../utils/blog_sneakpeek_data.json';
 import blogCover from '../../../utils/blog_image.jpg';
 import links from '../../../utils/links.json';
 import './blog_preview.css';
 
-class BlogPreview extends React.Component {
+// Must remain a class-based component to work with scroll functionality.
+export default class BlogPreview extends React.Component {
   render() {
     return (
       <div className="blog_preview section grey-bg">
@@ -65,5 +67,3 @@ class BlogPreview extends React.Component {
     );
   }
 }
-
-export default BlogPreview;
