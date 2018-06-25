@@ -5,11 +5,11 @@ import scrollToComponent from 'react-scroll-to-component';
 import FlashMessage from './flash_message/FlashMessage';
 import Header from './header/Header';
 import Jumbo from './jumbo/Jumbo';
-import AboutPreview from './about_preview/AboutPreview';
-import PortfolioPreview from './portfolio_preview/PortfolioPreview';
-import ResumePreview from './resume_preview/ResumePreview';
-import BlogPreview from './blog_preview/BlogPreview';
-import ContactPreview from './contact_preview/ContactPreview';
+import About from './about/About';
+import Projects from './projects/Projects';
+import Skills from './skills/Skills';
+import Blog from './blog/Blog';
+import Contact from './contact/Contact';
 import Footer from './footer/Footer';
 
 import './welcome.css';
@@ -69,11 +69,11 @@ class Welcome extends React.Component {
         </div>
         <React.StrictMode>
           <Jumbo ref={this.home} paddingTop={flashOpen ? 256 : 198} />
-          <AboutPreview ref={this.about} />
-          <PortfolioPreview ref={this.projects} />
-          <ResumePreview ref={this.skills} />
-          <BlogPreview ref={this.blog} />
-          <ContactPreview ref={this.contact} />
+          <About ref={this.about} />
+          <Projects ref={this.projects} />
+          <Skills ref={this.skills} />
+          <Blog ref={this.blog} />
+          <Contact ref={this.contact} />
           <Footer />
         </React.StrictMode>     
       </div>

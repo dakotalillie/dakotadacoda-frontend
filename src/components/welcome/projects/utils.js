@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col } from 'reactstrap';
+
 import TechIcon from './tech_icon/TechIcon';
 import reactLogo from '../../../img/framework_icons/react.png';
 import reduxLogo from '../../../img/other_icons/redux_transparent.png';
@@ -8,6 +9,9 @@ import railsLogo from '../../../img/framework_icons/rails.png';
 import djangoLogo from '../../../img/framework_icons/django.png';
 import materializeLogo from '../../../img/other_icons/materialize.png';
 import s3Logo from '../../../img/other_icons/s3.png';
+import postgreSQLLogo from '../../../img/other_icons/postgresql.png';
+import jestLogo from '../../../img/other_icons/jest.png';
+
 import beetboxCover from '../../../img/project_images/beetbox.png';
 import flatchatCover from '../../../img/project_images/flatchat.png';
 import diplomacyCover from '../../../img/project_images/diplomacy.png';
@@ -44,6 +48,14 @@ export function mapTechnology(tech) {
   case 'AWS S3':
     imgSrc = s3Logo;
     url = 'https://aws.amazon.com/s3/';
+    break;
+  case 'PostgreSQL':
+    imgSrc = postgreSQLLogo;
+    url = 'https://www.postgresql.org/';
+    break;
+  case 'Jest':
+    imgSrc = jestLogo;
+    url = 'http://jestjs.io/';
     break;
   default:
     imgSrc = '#';

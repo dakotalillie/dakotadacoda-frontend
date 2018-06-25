@@ -1,29 +1,29 @@
 {
-  "BeetBox": {
-    "key": 0,
-    "title": "BeetBox",
-    "subtitle": "Sample Library Manager",
-    "technologies": ["React", "Redux", "Bootstrap", "Ruby On Rails", "AWS S3"],
-    "links": {
-      "frontend": "https://github.com/dakotalillie/beetbox-dom",
-      "backend": "https://github.com/dakotalillie/beetbox-api"
-    }
-  },
   "Stratagem": {
     "key": 1,
     "title": "Stratagem",
     "subtitle": "Online Board Game",
-    "technologies": ["React", "Redux", "Bootstrap", "Django"],
+    "technologies": ["React", "Redux", "Bootstrap", "Django", "PostgreSQL", "Jest"],
     "links": {
       "frontend": "https://github.com/dakotalillie/stratagem-frontend",
       "backend": "https://github.com/dakotalillie/stratagem_api"
+    }
+  },
+  "BeetBox": {
+    "key": 0,
+    "title": "BeetBox",
+    "subtitle": "Sample Library Manager",
+    "technologies": ["React", "Redux", "Bootstrap", "Ruby On Rails", "PostgreSQL", "AWS S3"],
+    "links": {
+      "frontend": "https://github.com/dakotalillie/beetbox-dom",
+      "backend": "https://github.com/dakotalillie/beetbox-api"
     }
   },
   "FlatChat": {
     "key": 2,
     "title": "FlatChat",
     "subtitle": "Realtime Messaging Service",
-    "technologies": ["React", "Redux", "Bootstrap", "Ruby On Rails"],
+    "technologies": ["React", "Redux", "Bootstrap", "Ruby On Rails", "PostgreSQL"],
     "links": {
       "frontend": "https://github.com/dakotalillie/flatchat_dom",
       "backend": "https://github.com/dakotalillie/flatchat_api",

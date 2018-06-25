@@ -1,6 +1,6 @@
 @import 'index.scss';
 
-.about_preview {
+.about {
   .copy_col {
     margin-top: 38px;
   }
@@ -13,7 +13,7 @@
 }
 
 @media (max-width: 768px) {
-  .about_preview {
+  .about {
     text-align: center;
     .profile_col {
       text-align: center;

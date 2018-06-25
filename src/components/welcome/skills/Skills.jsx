@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Button, ButtonGroup, Col, Container, Row } from 'reactstrap';
 
 import { tabDisplay } from './utils';
-import './resume_preview.css';
+import './skills.css';
 
 class ResumePreview extends React.Component {
   state = {

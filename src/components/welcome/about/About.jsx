@@ -1,14 +1,14 @@
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
 
-import './about_preview.css';
+import './about.css';
 import profileImage from '../../../img/profile.jpg';
 
 // Must remain a class-based component to work with scroll functionality.
 export default class AboutPreview extends React.Component {
   render() {
     return (
-      <div className="about_preview section">
+      <div className="about section">
         <Container>
           <Row>
             <Col sm="9" className="copy_col">

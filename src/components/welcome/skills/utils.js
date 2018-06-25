@@ -1,5 +1,6 @@
 import React from 'react';
-import resumeData from './resume_data.json';
+
+import resumeData from './skills_data.json';
 import ItemIcon from '../../shared/item_icon/ItemIcon';
 import javascriptLogo from '../../../img/language_icons/javascript.png';
 import pythonLogo from '../../../img/language_icons/python.png';
@@ -13,6 +14,7 @@ import scssLogo from '../../../img/other_icons/scss.png';
 import postgresqlLogo from '../../../img/other_icons/postgresql.png';
 import bootstrapLogo from '../../../img/other_icons/bootstrap.png';
 import sketchLogo from '../../../img/other_icons/sketch.png';
+import jestLogo from '../../../img/other_icons/jest.png';
 
 export function tabDisplay(activeTab) {
   switch (activeTab) {
@@ -92,6 +94,9 @@ function otherTab() {
       break;
     case 'Sketch':
       src = sketchLogo;
+      break;
+    case 'Jest':
+      src = jestLogo;
       break;
     default:
       src = '#';

@@ -17,9 +17,9 @@ import {
 import projectsData from './projects_data.json';
 import { mapTechnology, determineCoverSrc } from './utils';
 import githubIcon from '../../../img/social_icons/github.png';
-import './portfolio_preview.css';
+import './projects.css';
 
-class PortfolioPreview extends React.Component {
+export default class Projects extends React.Component {
   render() {
     const keys = Object.keys(projectsData);
     const cards = keys.map(title => {
@@ -62,7 +62,7 @@ class PortfolioPreview extends React.Component {
     });
 
     return (
-      <div className="portfolio_preview section grey-bg">
+      <div className="projects section grey-bg">
         <Container>
           <h2>Recent Projects</h2>
           <CardDeck>{cards}</CardDeck>
@@ -71,5 +71,3 @@ class PortfolioPreview extends React.Component {
     );
   }
 }
-
-export default PortfolioPreview;

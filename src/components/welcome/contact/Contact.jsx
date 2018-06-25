@@ -11,9 +11,9 @@ import {
 } from 'reactstrap';
 
 import { determineButtonClass, determineButtonIcon } from './utils';
-import './contact_preview.css';
+import './contact.css';
 
-export default class ContactPreview extends React.Component {
+export default class Contact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -66,7 +66,7 @@ export default class ContactPreview extends React.Component {
 
   render() {
     return (
-      <div className="contact_preview section">
+      <div className="contact section">
         <Container>
           <Row>
             <Col>

@@ -21,7 +21,6 @@ class Jumbo extends React.Component {
           <Container>
             <h1 className="display-3">Dakota Lillie</h1>
             <p className="lead">Software Developer</p>
-
             <div className="social_icons">
               <a href={socialLinks.github}>
                 <img src={githubIcon} alt="Github" />
