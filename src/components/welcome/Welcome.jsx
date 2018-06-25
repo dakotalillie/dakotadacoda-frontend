@@ -28,7 +28,8 @@ class Welcome extends React.Component {
 
   state = {
     latestBlogTitle: '',
-    latestBlogLink: ''
+    latestBlogLink: '',
+    flashOpen: false,
   };
 
   componentDidMount() {
@@ -37,35 +38,44 @@ class Welcome extends React.Component {
       (err, rss) => {
         this.setState({
           latestBlogTitle: rss.items[0].title,
-          latestBlogLink: rss.items[0].link
+          latestBlogLink: rss.items[0].link,
+          flashOpen: true,
         });
       }
     );
   }
 
+  toggleFlash = () => {
+    this.setState({ flashOpen: false });
+  }
+
   handleScroll = target => {
-    scrollToComponent(this[target].current, { align: 'top', offset: -110 });
+    const offset = this.state.flashOpen ? -113 : -65;
+    scrollToComponent(this[target].current, { align: 'top', offset });
   };
 
   render() {
+    const { latestBlogTitle, latestBlogLink, flashOpen } = this.state;
     return (
       <div className="welcome_page">
         <div className="fixed_content">
-          {this.state.latestBlogTitle && this.state.latestBlogLink ? (
-            <FlashMessage
-              title={this.state.latestBlogTitle}
-              link={this.state.latestBlogLink}
-            />
-          ) : null}
+          <FlashMessage
+            title={latestBlogTitle}
+            link={latestBlogLink}
+            flashOpen={flashOpen}
+            toggleFlash = {this.toggleFlash}
+          />
           <Header handleScroll={this.handleScroll} />
         </div>
-        <Jumbo ref={this.home} />
-        <AboutPreview ref={this.about} />
-        <PortfolioPreview ref={this.projects} />
-        <ResumePreview ref={this.skills} />
-        <BlogPreview ref={this.blog} />
-        <ContactPreview ref={this.contact} />
-        <Footer />
+        <React.StrictMode>
+          <Jumbo ref={this.home} paddingTop={flashOpen ? 256 : 198} />
+          <AboutPreview ref={this.about} />
+          <PortfolioPreview ref={this.projects} />
+          <ResumePreview ref={this.skills} />
+          <BlogPreview ref={this.blog} />
+          <ContactPreview ref={this.contact} />
+          <Footer />
+        </React.StrictMode>     
       </div>
     );
   }

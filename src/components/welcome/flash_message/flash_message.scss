@@ -1,21 +1,20 @@
 @import '../../../index.scss';
 
-.flash_message {
+.flash_message.alert {
   text-align: center;
-  .alert {
-    background-color: $primaryDarkGrey;
-    border: none;
-    border-radius: 0;
-    color: white;
-    margin-bottom: 0;
-    .alert-link {
-      color: $primaryBlue;
-    }
-    .close {
-      &:hover,
-      &:focus {
-        color: white;
-      }
+  background-color: $primaryDarkGrey;
+  border: none;
+  border-radius: 0;
+  color: white;
+  margin-bottom: 0;
+  .alert-link {
+    color: $primaryBlue;
+  }
+  .close {
+    &:hover,
+    &:focus {
+      color: white;
+      outline: none;
     }
   }
 }
