@@ -2,6 +2,7 @@ import React from 'react';
 import Feed from 'rss-to-json';
 import scrollToComponent from 'react-scroll-to-component';
 import FlashMessage from './flash_message/FlashMessage';
+import Header from './header/Header';
 import Jumbo from './jumbo/Jumbo';
 import AboutPreview from './about_preview/AboutPreview';
 import PortfolioPreview from './portfolio_preview/PortfolioPreview';
@@ -9,6 +10,8 @@ import ResumePreview from './resume_preview/ResumePreview';
 import BlogPreview from './blog_preview/BlogPreview';
 import ContactPreview from './contact_preview/ContactPreview';
 import Footer from './footer/Footer';
+
+import './welcome.css';
 
 class Welcome extends React.Component {
   state = {
@@ -35,12 +38,15 @@ class Welcome extends React.Component {
   render() {
     return (
       <div className="welcome_page">
-        {this.state.latestBlogTitle && this.state.latestBlogLink ? (
-          <FlashMessage
-            title={this.state.latestBlogTitle}
-            link={this.state.latestBlogLink}
-          />
-        ) : null}
+        <div className="fixed_content">
+          {this.state.latestBlogTitle && this.state.latestBlogLink ? (
+            <FlashMessage
+              title={this.state.latestBlogTitle}
+              link={this.state.latestBlogLink}
+            />
+          ) : null}
+          <Header handleScroll={this.handleScroll} />
+        </div>
         <Jumbo
           handleScroll={this.handleScroll}
           ref={section => {

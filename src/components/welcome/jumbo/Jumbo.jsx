@@ -1,7 +1,5 @@
 import React from 'react';
 import { Container, Jumbotron } from 'reactstrap';
-import PropTypes from 'prop-types';
-import Header from '../header/Header';
 import githubIcon from '../../../img/social_icons/white/github.png';
 import mediumIcon from '../../../img/social_icons/white/medium.png';
 import linkedinIcon from '../../../img/social_icons/white/linkedin.png';
@@ -13,7 +11,6 @@ class Jumbo extends React.Component {
     return (
       <div className="jumbo">
         <Jumbotron fluid>
-          <Header handleScroll={this.props.handleScroll} />
           <Container>
             <h1 className="display-3">Dakota Lillie</h1>
             <p className="lead">Software Developer</p>
@@ -37,7 +34,3 @@ class Jumbo extends React.Component {
 }
 
 export default Jumbo;
-
-Jumbo.propTypes = {
-  handleScroll: PropTypes.func
-};

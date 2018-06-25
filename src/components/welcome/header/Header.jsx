@@ -14,6 +14,11 @@ import Logo from './logo/Logo';
 import './header.css';
 
 class Header extends React.Component {
+
+  static propTypes = {
+    handleScroll: PropTypes.func.isRequired
+  };
+
   state = {
     isOpen: false
   };
@@ -73,7 +78,3 @@ class Header extends React.Component {
 }
 
 export default Header;
-
-Header.propTypes = {
-  handleScroll: PropTypes.func.isRequired
-};
