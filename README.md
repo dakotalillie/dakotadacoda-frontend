@@ -1,6 +1,6 @@
 # DakotaDacoda Frontend
 
-This is the frontend code for my personal website, built using [Create React App](https://github.com/facebookincubator/create-react-app).
+This is the frontend for my personal website, built using [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Features
 
