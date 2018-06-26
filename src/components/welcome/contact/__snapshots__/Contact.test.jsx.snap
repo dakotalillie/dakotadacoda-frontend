@@ -68,9 +68,11 @@ exports[`Contact renders successfully 1`] = `
               Name
             </Label>
             <Input
+              className=""
               id="name"
               name="name"
               onChange={[Function]}
+              onFocus={[Function]}
               placeholder="Jane Doe"
               type="text"
               value=""
@@ -95,9 +97,11 @@ exports[`Contact renders successfully 1`] = `
               Email
             </Label>
             <Input
+              className=""
               id="email"
               name="email"
               onChange={[Function]}
+              onFocus={[Function]}
               placeholder="your@email.com"
               type="email"
               value=""
@@ -122,9 +126,11 @@ exports[`Contact renders successfully 1`] = `
               Subject
             </Label>
             <Input
+              className=""
               id="subject"
               name="_subject"
               onChange={[Function]}
+              onFocus={[Function]}
               placeholder="Your Subject"
               type="text"
               value=""
@@ -163,9 +169,11 @@ exports[`Contact renders successfully 1`] = `
               Message
             </Label>
             <Input
+              className=""
               id="message"
               name="message"
               onChange={[Function]}
+              onFocus={[Function]}
               placeholder="Hello World!"
               type="textarea"
               value=""

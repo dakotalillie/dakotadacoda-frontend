@@ -21,16 +21,43 @@ export default class Contact extends React.Component {
         name: '',
         email: '',
         _subject: '',
-        message: ''
+        message: '',
+      },
+      formErrors: {
+        name: false,
+        email: false,
+        _subject: false,
+        message: false,
       },
       status: null,
-      buttonHover: true
+      errorMessage: '',
+      buttonHover: false
     };
     this.form = null;
 
     this.setFormRef = e => {
       this.form = e;
     };
+  }
+
+  findEmptyFields = () => {
+    const emptyFields = [];
+    for (const field of Object.keys(this.state.formValues)) {
+      if (this.state.formValues[field].length === 0)
+        emptyFields.push(field);
+    }
+    if (emptyFields.length > 0) {
+      const newFormErrors = { ...this.state.formErrors };
+      emptyFields.forEach(field => {
+        newFormErrors[field] = true;
+      });
+      this.setState({
+        formErrors: newFormErrors,
+        status: 'error',
+        errorMessage: 'Every field must be filled in.'
+      });
+    }
+    return emptyFields;
   }
 
   handleChange = e => {
@@ -43,12 +70,24 @@ export default class Contact extends React.Component {
     });
   };
 
+  handleFocus = e => {
+    const name = e.target.name;
+    if (this.state.formErrors[name]) {
+      const newFormErrors = { ...this.state.formErrors };
+      newFormErrors[name] = false;
+      this.setState({ formErrors: newFormErrors, status: null });
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
     if (!this.state.status || this.state.status === 'error') {
-      this.setState({ status: 'loading' }, () => {
-        this.sendEmail();
-      });
+      const emptyFields = this.findEmptyFields();
+      if (!emptyFields.length) {
+        this.setState({ status: 'loading' }, () => {
+          this.sendEmail();
+        });
+      }
     }
   };
 
@@ -66,7 +105,10 @@ export default class Contact extends React.Component {
     if (res.status === 200) {
       this.setState({ status: 'success' });
     } else {
-      this.setState({ status: 'error' });
+      this.setState({
+        status: 'error',
+        errorMessage: 'Oops! Something went wrong. Please try again later.'
+      });
     }
   }
 
@@ -93,8 +135,10 @@ export default class Contact extends React.Component {
                     name="name"
                     id="name"
                     placeholder="Jane Doe"
+                    className={this.state.formErrors['name'] ? 'error' : ''}
                     value={this.state.formValues.name}
                     onChange={this.handleChange}
+                    onFocus={this.handleFocus}
                   />
                 </FormGroup>
                 <FormGroup>
@@ -104,8 +148,10 @@ export default class Contact extends React.Component {
                     name="email"
                     id="email"
                     placeholder="your@email.com"
+                    className={this.state.formErrors['email'] ? 'error' : ''}
                     value={this.state.formValues.email}
                     onChange={this.handleChange}
+                    onFocus={this.handleFocus}
                   />
                 </FormGroup>
                 <FormGroup>
@@ -115,8 +161,10 @@ export default class Contact extends React.Component {
                     name="_subject"
                     id="subject"
                     placeholder="Your Subject"
+                    className={this.state.formErrors['_subject'] ? 'error' : ''}
                     value={this.state.formValues._subject}
                     onChange={this.handleChange}
+                    onFocus={this.handleFocus}
                   />
                 </FormGroup>
               </Col>
@@ -128,18 +176,17 @@ export default class Contact extends React.Component {
                     name="message"
                     id="message"
                     placeholder="Hello World!"
+                    className={this.state.formErrors['message'] ? 'error' : ''}
                     value={this.state.formValues.message}
                     onChange={this.handleChange}
+                    onFocus={this.handleFocus}
                   />
                 </FormGroup>
               </Col>
             </Row>
             {this.state.status === 'error'
-              ? (
-                <p className="error_text">
-                  Oops! Something went wrong. Please try again later.
-                </p>
-              ) : null
+              ? <p className="error_text">{this.state.errorMessage}</p>
+              : null
             }
             <div className="button_div">
               <Button

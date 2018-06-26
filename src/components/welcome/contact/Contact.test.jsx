@@ -10,22 +10,15 @@ describe('Contact', () => {
 
   beforeEach(() => {
     wrapper = shallow(<Contact />);
+    wrapper.instance().sendEmail = jest.fn();
+    wrapper.update();
   });
 
   it('renders successfully', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it('updates state upon typing in input', () => {
-    wrapper.find('#name').simulate('change', {
-      target: {
-        name: 'name', value: 'Dakota'
-      }
-    });
-    expect(wrapper.state().formValues.name).toEqual('Dakota');
-  });
-
-  it('determines button class from state', () => {
+  it('determines button className from state', () => {
     let button = wrapper.find('.button_div Button');
     expect(button.props().className).toEqual('submit_button');
 
@@ -51,36 +44,81 @@ describe('Contact', () => {
     expect(button.children().text()).toEqual('<FontAwesomeIcon /> Sent!');
   });
 
-  describe('form submission', () => {
-
+  describe('user fills in some fields', () => {
     beforeEach(() => {
-      wrapper.instance().sendEmail = jest.fn();
-      wrapper.update();
-      wrapper.find('Form').simulate('submit', { preventDefault: () => { } });
+      wrapper.find('#name').simulate('change', {
+        target: { name: 'name', value: 'Dakota' }
+      });
+      wrapper.find('#email').simulate('change', {
+        target: { name: 'email', value: 'dakota@email.com' }
+      });
     });
 
-    it('sets state to `loading`', () => {
-      expect(wrapper.state().status).toEqual('loading');
+    it('updates state', () => {
+      expect(wrapper.state().formValues.name).toEqual('Dakota');
+      expect(wrapper.state().formValues.email).toEqual('dakota@email.com');
     });
 
-    it('calls sendEmail', () => {
-      expect(wrapper.instance().sendEmail).toHaveBeenCalled();
+    describe('user submits form with empty fields', () => {
+
+      beforeEach(() => {
+        wrapper.find('Form').simulate('submit', { preventDefault: () => { } });
+      });
+
+      it('updates state', () => {
+        expect(wrapper.state().formErrors._subject).toBe(true);
+        expect(wrapper.state().formErrors.message).toBe(true);
+        expect(wrapper.state().status).toEqual('error');
+      });
+
+      it('determines input className from state', () => {
+        expect(wrapper.find('#subject').props().className).toEqual('error');
+        expect(wrapper.find('#message').props().className).toEqual('error');
+      });
+
+      it('clears error after focusing on input', () => {
+        wrapper.find('#subject').simulate('focus', { target: { name: '_subject' }});
+        expect(wrapper.state().formErrors._subject).toBe(false);
+        expect(wrapper.state().status).toBeNull();
+      });
+
     });
-  });
 
-  it('sets state upon a successful response', () => {
-    wrapper.instance().handleResponse({ status: 200 });
-    expect(wrapper.state().status).toEqual('success');
-  });
+    describe('user fills in rest of fields and submits form', () => {
 
-  it('sets state upon an unsuccessful response', () => {
-    wrapper.instance().handleResponse({ status: 400 });
-    expect(wrapper.state().status).toEqual('error');
-  });
+      beforeEach(() => {
+        wrapper.find('#subject').simulate('change', {
+          target: { name: '_subject', value: 'Foo Bar' }
+        });
+        wrapper.find('#message').simulate('change', {
+          target: { name: 'message', value: 'Hello World' }
+        });
+        wrapper.find('Form').simulate('submit', { preventDefault: () => { } });
+      });    
+  
+      it('sets status to `loading`', () => {
+        expect(wrapper.state().status).toEqual('loading');
+      });
+  
+      it('calls sendEmail', () => {
+        expect(wrapper.instance().sendEmail).toHaveBeenCalled();
+      });
 
-  it('displays error message after unsuccessful response', () => {
-    expect(wrapper.find('.error_text').exists()).toBe(false);
-    wrapper.setState({ status: 'error' });
-    expect(wrapper.find('.error_text').exists()).toBe(true);
+      it('sets status to `success` upon a successful response', () => {
+        wrapper.instance().handleResponse({ status: 200 });
+        expect(wrapper.state().status).toEqual('success');
+      });
+    
+      it('sets status to `error` upon an unsuccessful response', () => {
+        wrapper.instance().handleResponse({ status: 400 });
+        expect(wrapper.state().status).toEqual('error');
+      });
+    
+      it('displays error message after unsuccessful response', () => {
+        expect(wrapper.find('.error_text').exists()).toBe(false);
+        wrapper.setState({ status: 'error' });
+        expect(wrapper.find('.error_text').exists()).toBe(true);
+      });
+    });
   });
 });
