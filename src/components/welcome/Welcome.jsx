@@ -1,6 +1,5 @@
 import React from 'react';
 import Feed from 'rss-to-json';
-import scrollToComponent from 'react-scroll-to-component';
 
 import FlashMessage from './flash_message/FlashMessage';
 import Header from './header/Header';
@@ -33,6 +32,8 @@ class Welcome extends React.Component {
   };
 
   componentDidMount() {
+    // Hacky solution for this problem: https://github.com/component/scroll-to/issues/9
+    this.scrollToComponent = require('react-scroll-to-component');
     Feed.load(
       'https://cors-anywhere.herokuapp.com/https://medium.com/feed/@dakota.lillie',
       (err, rss) => {
@@ -51,7 +52,7 @@ class Welcome extends React.Component {
 
   handleScroll = target => {
     const offset = this.state.flashOpen ? -113 : -65;
-    scrollToComponent(this[target].current, { align: 'top', offset });
+    this.scrollToComponent(this[target].current, { align: 'top', offset });
   };
 
   render() {

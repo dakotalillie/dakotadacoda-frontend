@@ -45,24 +45,30 @@ export default class Contact extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    if (!this.state.status) {
+    if (!this.state.status || this.state.status === 'error') {
       this.setState({ status: 'loading' }, () => {
-        fetch('https://formspree.io/mkreevwx', {
-          method: 'POST',
-          body: JSON.stringify(this.state.formValues),
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        }).then(res => {
-          if (res.status === 200) {
-            this.setState({ status: 'success' });
-          } else {
-            console.log(res);
-          }
-        });
+        this.sendEmail();
       });
     }
   };
+
+  sendEmail = () => {
+    fetch('https://formspree.io/mkreevwx', {
+      method: 'POST',
+      body: JSON.stringify(this.state.formValues),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(this.handleResponse);
+  }
+
+  handleResponse = res => {
+    if (res.status === 200) {
+      this.setState({ status: 'success' });
+    } else {
+      this.setState({ status: 'error' });
+    }
+  }
 
   render() {
     return (
@@ -128,6 +134,13 @@ export default class Contact extends React.Component {
                 </FormGroup>
               </Col>
             </Row>
+            {this.state.status === 'error'
+              ? (
+                <p className="error_text">
+                  Oops! Something went wrong. Please try again later.
+                </p>
+              ) : null
+            }
             <div className="button_div">
               <Button
                 outline

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlashMessage renders successfully 1`] = `
+<Alert
+  className="flash_message"
+  closeAriaLabel="Close"
+  color="dark"
+  isOpen={true}
+  tag="div"
+  toggle={[Function]}
+  transition={
+    Object {
+      "timeout": 0,
+      "unmountOnExit": true,
+    }
+  }
+>
+  Check out my latest blog post —
+   
+  <a
+    className="alert-link"
+    href=""
+  />
+</Alert>
+`;

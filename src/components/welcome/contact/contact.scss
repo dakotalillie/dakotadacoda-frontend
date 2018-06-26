@@ -23,6 +23,10 @@
       resize: none;
     }
   }
+  .error_text {
+    color: $errorRed;
+    text-align: right;
+  }
   .button_div {
     text-align: right;
     .submit_button {

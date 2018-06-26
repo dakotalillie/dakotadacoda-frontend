@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About renders successfully 1`] = `
+<div
+  className="about section"
+>
+  <Container
+    tag="div"
+  >
+    <Row
+      tag="div"
+    >
+      <Col
+        className="copy_col"
+        sm="9"
+        tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+      >
+        <h2>
+          My name is Dakota
+        </h2>
+        <h2>
+          I write code and make music
+        </h2>
+        <h5>
+          (The two are not so dissimilar)
+        </h5>
+      </Col>
+      <Col
+        className="profile_col"
+        sm="3"
+        tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+      >
+        <img
+          alt="profile"
+          className="profile_image"
+          src="profile.jpg"
+        />
+      </Col>
+    </Row>
+  </Container>
+</div>
+`;

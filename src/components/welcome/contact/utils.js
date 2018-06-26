@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import checkMark from '@fortawesome/fontawesome-free-solid/faCheck';
 
 export function determineButtonIcon(status, hover) {
-  if (status === null) {
+  if (status === null || status === 'error') {
     return 'Send';
   } else if (status === 'loading') {
     return (

@@ -1,0 +1,141 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blog renders successfully 1`] = `
+<div
+  className="blog section grey-bg"
+>
+  <Container
+    tag="div"
+  >
+    <Row
+      tag="div"
+    >
+      <Col
+        sm="6"
+        tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+      >
+        <h2>
+          Technical Blog
+        </h2>
+        <h5>
+          The best way to learn is to teach
+        </h5>
+        <Button
+          className="section_button"
+          color="secondary"
+          href="https://medium.com/@dakota.lillie"
+          outline={true}
+          size="lg"
+          tag="button"
+        >
+          Read On Medium
+        </Button>
+      </Col>
+      <Col
+        className="second"
+        sm="6"
+        tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+      >
+        <Card
+          tag="div"
+        >
+          <a
+            href="https://medium.com/@dakota.lillie/django-react-jwt-authentication-5015ee00ef9a"
+          >
+            <CardImg
+              alt="Card image cap"
+              src="blog_image.jpg"
+              tag="img"
+              top={true}
+              width="100%"
+            />
+          </a>
+          <CardBody
+            tag="div"
+          >
+            <CardTitle
+              tag="h5"
+            >
+              <a
+                href="https://medium.com/@dakota.lillie/django-react-jwt-authentication-5015ee00ef9a"
+              >
+                Django & React: JWT Authentication
+              </a>
+            </CardTitle>
+            <CardSubtitle
+              tag="h6"
+            >
+              Published 
+              Apr 12th, 2018
+            </CardSubtitle>
+            <CardText
+              tag="p"
+            >
+              Recently I’ve been building an app using a combination of React for the frontend and Django for the backend. I wasn’t previously all too familiar with Django, but this seemed like a good opportunity to teach myself, and having experience with Ruby on Rails has made the process a little easier. However, Django and Rails have their fair share of differences, and one of the things which I’ve had the most trouble implementing is user authentication. So I’m sharing what I’ve learned, in the hopes that you too might find it useful!
+            </CardText>
+            <p
+              className="ellipsis"
+            >
+              ...
+            </p>
+            <Button
+              color="link"
+              href="https://medium.com/@dakota.lillie/django-react-jwt-authentication-5015ee00ef9a"
+              tag="button"
+            >
+              Read More 
+              <FontAwesomeIcon
+                border={false}
+                className=""
+                fixedWidth={false}
+                flip={null}
+                icon={
+                  Object {
+                    "icon": Array [
+                      448,
+                      512,
+                      Array [],
+                      "f061",
+                      "M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z",
+                    ],
+                    "iconName": "arrow-right",
+                    "prefix": "fas",
+                  }
+                }
+                inverse={false}
+                listItem={false}
+                mask={null}
+                pull={null}
+                pulse={false}
+                rotation={null}
+                size={null}
+                spin={false}
+                symbol={false}
+                transform={null}
+              />
+            </Button>
+          </CardBody>
+        </Card>
+      </Col>
+    </Row>
+  </Container>
+</div>
+`;

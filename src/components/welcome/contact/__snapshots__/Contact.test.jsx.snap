@@ -1,0 +1,195 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact renders successfully 1`] = `
+<div
+  className="contact section"
+>
+  <Container
+    tag="div"
+  >
+    <Row
+      tag="div"
+    >
+      <Col
+        tag="div"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+      >
+        <h2>
+          Get In Touch
+        </h2>
+      </Col>
+    </Row>
+    <Form
+      className="contact_form"
+      innerRef={[Function]}
+      onSubmit={[Function]}
+      tag="form"
+    >
+      <Row
+        tag="div"
+      >
+        <Col
+          sm="6"
+          tag="div"
+          widths={
+            Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ]
+          }
+        >
+          <FormGroup
+            tag="div"
+          >
+            <Label
+              for="name"
+              tag="label"
+              widths={
+                Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ]
+              }
+            >
+              Name
+            </Label>
+            <Input
+              id="name"
+              name="name"
+              onChange={[Function]}
+              placeholder="Jane Doe"
+              type="text"
+              value=""
+            />
+          </FormGroup>
+          <FormGroup
+            tag="div"
+          >
+            <Label
+              for="email"
+              tag="label"
+              widths={
+                Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ]
+              }
+            >
+              Email
+            </Label>
+            <Input
+              id="email"
+              name="email"
+              onChange={[Function]}
+              placeholder="your@email.com"
+              type="email"
+              value=""
+            />
+          </FormGroup>
+          <FormGroup
+            tag="div"
+          >
+            <Label
+              for="_subject"
+              tag="label"
+              widths={
+                Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ]
+              }
+            >
+              Subject
+            </Label>
+            <Input
+              id="subject"
+              name="_subject"
+              onChange={[Function]}
+              placeholder="Your Subject"
+              type="text"
+              value=""
+            />
+          </FormGroup>
+        </Col>
+        <Col
+          sm="6"
+          tag="div"
+          widths={
+            Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ]
+          }
+        >
+          <FormGroup
+            tag="div"
+          >
+            <Label
+              for="message"
+              tag="label"
+              widths={
+                Array [
+                  "xs",
+                  "sm",
+                  "md",
+                  "lg",
+                  "xl",
+                ]
+              }
+            >
+              Message
+            </Label>
+            <Input
+              id="message"
+              name="message"
+              onChange={[Function]}
+              placeholder="Hello World!"
+              type="textarea"
+              value=""
+            />
+          </FormGroup>
+        </Col>
+      </Row>
+      <div
+        className="button_div"
+      >
+        <Button
+          className="submit_button"
+          color="primary"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          outline={true}
+          size="lg"
+          tag="button"
+          type="submit"
+        >
+          Send
+        </Button>
+      </div>
+    </Form>
+  </Container>
+</div>
+`;
