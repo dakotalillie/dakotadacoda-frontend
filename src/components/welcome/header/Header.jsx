@@ -42,7 +42,12 @@ class Header extends React.Component {
               <Nav className="ml-auto" navbar>
                 {sections.map(name => (
                   <NavItem key={name}>
-                    <NavLink onClick={() => this.props.handleScroll(name.toLowerCase())}>
+                    <NavLink
+                      id={`${name.toLowerCase()}_nav_link`}
+                      onClick={() => (
+                        this.props.handleScroll(name.toLowerCase())
+                      )}
+                    >
                       {name}
                     </NavLink>
                   </NavItem>

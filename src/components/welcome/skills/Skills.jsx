@@ -22,6 +22,7 @@ class ResumePreview extends React.Component {
             {tabs.map(name => (
               <Button
                 key={name}
+                id={`${name.toLowerCase()}_tab`}
                 outline
                 block
                 color="primary"

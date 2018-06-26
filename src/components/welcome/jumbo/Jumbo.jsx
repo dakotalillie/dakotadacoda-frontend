@@ -11,7 +11,11 @@ import './jumbo.css';
 class Jumbo extends React.Component {
 
   static propTypes = {
-    paddingTop: PropTypes.number.isRequired,
+    paddingTop: PropTypes.number,
+  }
+
+  static defaultProps = {
+    paddingTop: 198,
   }
 
   render() {

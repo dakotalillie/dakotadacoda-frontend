@@ -32,22 +32,29 @@ class Welcome extends React.Component {
   };
 
   componentDidMount() {
+    this.fetchLatestBlogPost();
+  }
+
+  fetchLatestBlogPost = () => {
     // Hacky solution for this problem: https://github.com/component/scroll-to/issues/9
     this.scrollToComponent = require('react-scroll-to-component');
     Feed.load(
       'https://cors-anywhere.herokuapp.com/https://medium.com/feed/@dakota.lillie',
-      (err, rss) => {
-        this.setState({
-          latestBlogTitle: rss.items[0].title,
-          latestBlogLink: rss.items[0].link,
-          flashOpen: true,
-        });
-      }
+      this.handleResponseFromMedium
     );
   }
 
   toggleFlash = () => {
     this.setState({ flashOpen: false });
+  }
+
+  handleResponseFromMedium = (err, rss) => {
+    if (err) return;
+    this.setState({
+      latestBlogTitle: rss.items[0].title,
+      latestBlogLink: rss.items[0].link,
+      flashOpen: true,
+    });
   }
 
   handleScroll = target => {

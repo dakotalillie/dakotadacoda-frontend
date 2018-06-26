@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Jumbo renders successfully 1`] = `
+<div
+  className="jumbo"
+>
+  <Jumbotron
+    fluid={true}
+    style={
+      Object {
+        "paddingTop": 198,
+      }
+    }
+    tag="div"
+  >
+    <Container
+      tag="div"
+    >
+      <h1
+        className="display-3"
+      >
+        Dakota Lillie
+      </h1>
+      <p
+        className="lead"
+      >
+        Software Developer
+      </p>
+      <div
+        className="social_icons"
+      >
+        <a
+          href="https://github.com/dakotalillie"
+        >
+          <img
+            alt="Github"
+            src="github.png"
+          />
+        </a>
+        <a
+          href="https://medium.com/@dakota.lillie"
+        >
+          <img
+            alt="Medium"
+            src="medium.png"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/dakotalillie/"
+        >
+          <img
+            alt="Linked In"
+            className="linkedin"
+            src="linkedin.png"
+          />
+        </a>
+      </div>
+    </Container>
+  </Jumbotron>
+</div>
+`;

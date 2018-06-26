@@ -18,32 +18,6 @@ describe('Contact', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it('determines button className from state', () => {
-    let button = wrapper.find('.button_div Button');
-    expect(button.props().className).toEqual('submit_button');
-
-    wrapper.setState({ status: 'loading' });
-    button = wrapper.find('.button_div Button');
-    expect(button.props().className).toEqual('submit_button disabled loading');
-
-    wrapper.setState({ status: 'success' });
-    button = wrapper.find('.button_div Button');
-    expect(button.props().className).toEqual('submit_button disabled');
-  });
-
-  it('determines button contents from state', () => {
-    let button = wrapper.find('.button_div Button');
-    expect(button.children().text()).toEqual('Send');
-
-    wrapper.setState({ status: 'loading' });
-    button = wrapper.find('.button_div Button');
-    expect(button.children().text()).toEqual('<Loader />');
-    
-    wrapper.setState({ status: 'success' });
-    button = wrapper.find('.button_div Button');
-    expect(button.children().text()).toEqual('<FontAwesomeIcon /> Sent!');
-  });
-
   describe('user fills in some fields', () => {
     beforeEach(() => {
       wrapper.find('#name').simulate('change', {
@@ -104,20 +78,62 @@ describe('Contact', () => {
         expect(wrapper.instance().sendEmail).toHaveBeenCalled();
       });
 
-      it('sets status to `success` upon a successful response', () => {
-        wrapper.instance().handleResponse({ status: 200 });
-        expect(wrapper.state().status).toEqual('success');
+      it('changes submit button className', () => {
+        const button = wrapper.find('.button_div Button');
+        expect(button.props().className).toEqual('submit_button disabled loading');
       });
-    
-      it('sets status to `error` upon an unsuccessful response', () => {
-        wrapper.instance().handleResponse({ status: 400 });
-        expect(wrapper.state().status).toEqual('error');
+
+      it('changes submit button contents', () => {
+        const button = wrapper.find('.button_div Button');
+        expect(button.children().text()).toEqual('<Loader />');
       });
-    
-      it('displays error message after unsuccessful response', () => {
-        expect(wrapper.find('.error_text').exists()).toBe(false);
-        wrapper.setState({ status: 'error' });
-        expect(wrapper.find('.error_text').exists()).toBe(true);
+
+      describe('submission is successful', () => {
+
+        beforeEach(() => {
+          wrapper.instance().handleResponse({ status: 200 });
+          wrapper.update();
+        });
+
+        it('sets status to `success`', () => {   
+          expect(wrapper.state().status).toEqual('success');
+        });
+
+        it('changes submit button className', () => {
+          const button = wrapper.find('.button_div Button');
+          expect(button.props().className).toEqual('submit_button disabled');
+        });
+  
+        it('changes submit button contents', () => {
+          const button = wrapper.find('.button_div Button');
+          expect(button.children().text()).toEqual('<FontAwesomeIcon /> Sent!');
+        });
+      });
+
+      describe('submission is unsuccessful', () => {
+
+        beforeEach(() => {
+          wrapper.instance().handleResponse({ status: 400 });
+          wrapper.update();
+        });
+
+        it('sets status to `error`', () => {
+          expect(wrapper.state().status).toEqual('error');
+        });
+      
+        it('displays error message ', () => {
+          expect(wrapper.find('.error_text').exists()).toBe(true);
+        });
+
+        it('resets submit button className', () => {
+          const button = wrapper.find('.button_div Button');
+          expect(button.props().className).toEqual('submit_button');
+        });
+  
+        it('resets submit button contents', () => {
+          const button = wrapper.find('.button_div Button');
+          expect(button.children().text()).toEqual('Send');
+        });
       });
     });
   });
