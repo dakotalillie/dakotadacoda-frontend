@@ -20,7 +20,7 @@
         box-shadow: 0 0 15px 3px $errorRed;
       }
     }
-    #message {
+    #text {
       // border: 1px solid white;
       height: 210px;
       resize: none;
@@ -40,8 +40,9 @@
         color: white;
       }
       &.loading {
-        padding-bottom: 5px;
-        padding-top: 11px;
+        div {
+          display: flex;
+        }
       }
     }
   }

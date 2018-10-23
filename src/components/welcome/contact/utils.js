@@ -9,9 +9,9 @@ export function determineButtonIcon(status, hover) {
   } else if (status === 'loading') {
     return (
       <Loader
-        type="Oval"
+        type="TailSpin"
         color={hover ? '#ffffff' : '#28a9ff'}
-        height={22}
+        height={30}
         width={45}
       />
     );

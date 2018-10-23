@@ -20,14 +20,14 @@ export default class Contact extends React.Component {
       formValues: {
         name: '',
         email: '',
-        _subject: '',
-        message: '',
+        subject: '',
+        text: '',
       },
       formErrors: {
         name: false,
         email: false,
-        _subject: false,
-        message: false,
+        subject: false,
+        text: false,
       },
       status: null,
       errorMessage: '',
@@ -92,24 +92,30 @@ export default class Contact extends React.Component {
   };
 
   sendEmail = () => {
-    fetch('https://formspree.io/mkreevwx', {
+    fetch('http://localhost:3001/api/v1/', {
       method: 'POST',
       body: JSON.stringify(this.state.formValues),
       headers: {
         'Content-Type': 'application/json'
       }
-    }).then(this.handleResponse);
+    })
+      .then(this.handleResponse)
+      .catch(this.handleError);
   }
 
   handleResponse = res => {
     if (res.status === 200) {
       this.setState({ status: 'success' });
     } else {
-      this.setState({
-        status: 'error',
-        errorMessage: 'Oops! Something went wrong. Please try again later.'
-      });
+      this.handleError();
     }
+  }
+
+  handleError = () => {
+    this.setState({
+      status: 'error',
+      errorMessage: 'Oops! Something went wrong. Please try again later.'
+    });
   }
 
   render() {
@@ -155,14 +161,14 @@ export default class Contact extends React.Component {
                   />
                 </FormGroup>
                 <FormGroup>
-                  <Label for="_subject">Subject</Label>
+                  <Label for="subject">Subject</Label>
                   <Input
                     type="text"
-                    name="_subject"
+                    name="subject"
                     id="subject"
                     placeholder="Your Subject"
-                    className={this.state.formErrors['_subject'] ? 'error' : ''}
-                    value={this.state.formValues._subject}
+                    className={this.state.formErrors['subject'] ? 'error' : ''}
+                    value={this.state.formValues.subject}
                     onChange={this.handleChange}
                     onFocus={this.handleFocus}
                   />
@@ -170,14 +176,14 @@ export default class Contact extends React.Component {
               </Col>
               <Col sm="6">
                 <FormGroup>
-                  <Label for="message">Message</Label>
+                  <Label for="text">Message</Label>
                   <Input
                     type="textarea"
-                    name="message"
-                    id="message"
+                    name="text"
+                    id="text"
                     placeholder="Hello World!"
-                    className={this.state.formErrors['message'] ? 'error' : ''}
-                    value={this.state.formValues.message}
+                    className={this.state.formErrors['text'] ? 'error' : ''}
+                    value={this.state.formValues.text}
                     onChange={this.handleChange}
                     onFocus={this.handleFocus}
                   />
