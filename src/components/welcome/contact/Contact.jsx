@@ -92,7 +92,7 @@ export default class Contact extends React.Component {
   };
 
   sendEmail = () => {
-    fetch('http://localhost:3001/api/v1/', {
+    fetch('http://localhost:5001/api/v1/', {
       method: 'POST',
       body: JSON.stringify(this.state.formValues),
       headers: {
