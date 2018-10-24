@@ -11,7 +11,7 @@ import Blog from './blog/Blog';
 import Contact from './contact/Contact';
 import Footer from './footer/Footer';
 
-import './welcome.css';
+import './welcome.scss';
 
 class Welcome extends React.Component {
 

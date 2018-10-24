@@ -12,7 +12,7 @@ import {
 import PropTypes from 'prop-types';
 
 import Logo from './logo/Logo';
-import './header.css';
+import './header.scss';
 
 class Header extends React.Component {
 

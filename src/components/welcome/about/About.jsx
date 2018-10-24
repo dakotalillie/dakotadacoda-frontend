@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
 
-import './about.css';
+import './about.scss';
 import profileImage from '../../../img/profile.jpg';
 
 // Must remain a class-based component to work with scroll functionality.

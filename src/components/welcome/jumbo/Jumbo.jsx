@@ -6,7 +6,7 @@ import githubIcon from '../../../img/social_icons/white/github.png';
 import mediumIcon from '../../../img/social_icons/white/medium.png';
 import linkedinIcon from '../../../img/social_icons/white/linkedin.png';
 import socialLinks from '../../../utils/links.json';
-import './jumbo.css';
+import './jumbo.scss';
 
 class Jumbo extends React.Component {
 

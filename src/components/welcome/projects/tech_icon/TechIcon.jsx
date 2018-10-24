@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './tech_icon.css';
+import './tech_icon.scss';
 
 export default function TechIcon({ url, src, alt }) {
   return (

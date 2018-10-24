@@ -17,7 +17,7 @@ import {
 import projectsData from './projects_data.json';
 import { mapTechnology, determineCoverSrc } from './utils';
 import githubIcon from '../../../img/social_icons/github.png';
-import './projects.css';
+import './projects.scss';
 
 export default class Projects extends React.Component {
   render() {

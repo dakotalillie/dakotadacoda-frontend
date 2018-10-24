@@ -2,7 +2,7 @@ import React from 'react';
 import { Col } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import './item_icon.css';
+import './item_icon.scss';
 
 export default function ItemIcon(props) {
   return (

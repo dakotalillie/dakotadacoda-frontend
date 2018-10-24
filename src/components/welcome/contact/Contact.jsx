@@ -11,7 +11,7 @@ import {
 } from 'reactstrap';
 
 import { determineButtonClass, determineButtonIcon } from './utils';
-import './contact.css';
+import './contact.scss';
 
 export default class Contact extends React.Component {
   constructor(props) {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Alert } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-import './flash_message.css';
+import './flash_message.scss';
 
 export default function FlashMessage({ link, title, flashOpen, toggleFlash }) {
   return (

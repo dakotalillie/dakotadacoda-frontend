@@ -17,7 +17,7 @@ import faArrowRight from '@fortawesome/fontawesome-free-solid/faArrowRight';
 import blogData from '../../../utils/blog_sneakpeek_data.json';
 import blogCover from '../../../utils/blog_image.jpg';
 import links from '../../../utils/links.json';
-import './blog.css';
+import './blog.scss';
 
 // Must remain a class-based component to work with scroll functionality.
 export default class BlogPreview extends React.Component {
