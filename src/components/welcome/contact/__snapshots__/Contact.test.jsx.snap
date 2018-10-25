@@ -111,7 +111,7 @@ exports[`Contact renders successfully 1`] = `
             tag="div"
           >
             <Label
-              for="_subject"
+              for="subject"
               tag="label"
               widths={
                 Array [
@@ -128,7 +128,7 @@ exports[`Contact renders successfully 1`] = `
             <Input
               className=""
               id="subject"
-              name="_subject"
+              name="subject"
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Your Subject"
@@ -154,7 +154,7 @@ exports[`Contact renders successfully 1`] = `
             tag="div"
           >
             <Label
-              for="message"
+              for="text"
               tag="label"
               widths={
                 Array [
@@ -170,8 +170,8 @@ exports[`Contact renders successfully 1`] = `
             </Label>
             <Input
               className=""
-              id="message"
-              name="message"
+              id="text"
+              name="text"
               onChange={[Function]}
               onFocus={[Function]}
               placeholder="Hello World!"

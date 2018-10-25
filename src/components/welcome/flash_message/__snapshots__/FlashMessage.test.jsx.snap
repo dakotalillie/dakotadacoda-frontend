@@ -5,6 +5,7 @@ exports[`FlashMessage renders successfully 1`] = `
   className="flash_message"
   closeAriaLabel="Close"
   color="dark"
+  fade={true}
   isOpen={true}
   tag="div"
   toggle={[Function]}

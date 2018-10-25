@@ -40,19 +40,19 @@ describe('Contact', () => {
       });
 
       it('updates state', () => {
-        expect(wrapper.state().formErrors._subject).toBe(true);
-        expect(wrapper.state().formErrors.message).toBe(true);
+        expect(wrapper.state().formErrors.subject).toBe(true);
+        expect(wrapper.state().formErrors.text).toBe(true);
         expect(wrapper.state().status).toEqual('error');
       });
 
       it('determines input className from state', () => {
         expect(wrapper.find('#subject').props().className).toEqual('error');
-        expect(wrapper.find('#message').props().className).toEqual('error');
+        expect(wrapper.find('#text').props().className).toEqual('error');
       });
 
       it('clears error after focusing on input', () => {
-        wrapper.find('#subject').simulate('focus', { target: { name: '_subject' }});
-        expect(wrapper.state().formErrors._subject).toBe(false);
+        wrapper.find('#subject').simulate('focus', { target: { name: 'subject' }});
+        expect(wrapper.state().formErrors.subject).toBe(false);
         expect(wrapper.state().status).toBeNull();
       });
 
@@ -62,10 +62,10 @@ describe('Contact', () => {
 
       beforeEach(() => {
         wrapper.find('#subject').simulate('change', {
-          target: { name: '_subject', value: 'Foo Bar' }
+          target: { name: 'subject', value: 'Foo Bar' }
         });
-        wrapper.find('#message').simulate('change', {
-          target: { name: 'message', value: 'Hello World' }
+        wrapper.find('#text').simulate('change', {
+          target: { name: 'text', value: 'Hello World' }
         });
         wrapper.find('Form').simulate('submit', { preventDefault: () => { } });
       });    

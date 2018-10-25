@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Button, ButtonGroup, Col, Container, Row } from 'reactstrap';
 
 import { tabDisplay } from './utils';
@@ -16,7 +16,7 @@ class ResumePreview extends React.Component {
   render() {
     const tabs = ['Languages', 'Frameworks', 'Other'];
     const section1 = (
-      <Fragment>
+      <>
         <Col sm="2" className="buttons_col">
           <ButtonGroup vertical>
             {tabs.map(name => (
@@ -37,7 +37,7 @@ class ResumePreview extends React.Component {
         <Col sm="6" className="icons_col">
           <Row>{tabDisplay(this.state.active)}</Row>
         </Col>
-      </Fragment>
+      </>
     );
 
     const section2 = (
